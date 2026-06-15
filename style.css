@@ -926,3 +926,64 @@ footer {
     aspect-ratio: 4 / 5;
   }
 }
+
+
+/* JPAG v12 stronger photo background blend */
+.actual-member-photo {
+  background:
+    radial-gradient(circle at 20% 15%, rgba(46,168,255,0.35), transparent 34%),
+    radial-gradient(circle at 85% 10%, rgba(255,61,190,0.32), transparent 36%),
+    linear-gradient(135deg, #050712, #13081f) !important;
+}
+
+.actual-member-photo::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  pointer-events: none;
+  background:
+    radial-gradient(circle at 18% 18%, rgba(46,168,255,0.38), transparent 38%),
+    radial-gradient(circle at 82% 16%, rgba(255,61,190,0.36), transparent 40%),
+    linear-gradient(180deg, rgba(4,5,16,0.10), rgba(4,5,16,0.48));
+  mix-blend-mode: color;
+  opacity: 0.88;
+}
+
+.actual-member-photo::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 3;
+  pointer-events: none;
+  background:
+    linear-gradient(180deg, transparent 45%, rgba(5,5,16,0.72) 100%),
+    radial-gradient(circle at 50% 50%, transparent 38%, rgba(5,5,16,0.32) 100%);
+  box-shadow:
+    inset 0 -100px 95px rgba(5,5,16,0.76),
+    inset 0 0 70px rgba(46,168,255,0.10);
+}
+
+.photo-member-card:nth-child(1) .actual-member-photo::before,
+.photo-member-card:nth-child(2) .actual-member-photo::before {
+  background:
+    radial-gradient(circle at 16% 16%, rgba(255,61,190,0.46), transparent 42%),
+    radial-gradient(circle at 85% 18%, rgba(46,168,255,0.25), transparent 38%),
+    linear-gradient(180deg, rgba(4,5,16,0.12), rgba(4,5,16,0.48));
+}
+
+.photo-member-card:nth-child(3) .actual-member-photo::before,
+.photo-member-card:nth-child(4) .actual-member-photo::before {
+  background:
+    radial-gradient(circle at 16% 16%, rgba(46,168,255,0.48), transparent 42%),
+    radial-gradient(circle at 85% 18%, rgba(255,61,190,0.24), transparent 38%),
+    linear-gradient(180deg, rgba(4,5,16,0.12), rgba(4,5,16,0.48));
+}
+
+.actual-member-photo img {
+  filter: saturate(0.88) contrast(1.12) brightness(0.78) !important;
+}
+
+.photo-member-card:hover .actual-member-photo img {
+  filter: saturate(1.02) contrast(1.12) brightness(0.86) !important;
+}

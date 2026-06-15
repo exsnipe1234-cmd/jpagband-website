@@ -1,10 +1,10 @@
-JPAG Website v11
+JPAG Website v12
 
 Updates:
-- Biography member order is now Jazz, Phoebe, Wero, Gerald.
-- Member photos remain actual website images, not generated images.
-- Photo cards now include neon blue/pink blending overlays.
-- Small SVG icons preserved.
+- Stronger blue/pink neon overlay on member photos.
+- Grey photo background now blends better with website theme.
+- Member order remains Jazz, Phoebe, Wero, Gerald.
+- Small icons preserved.
 
 Upload all files inside this ZIP to your GitHub repository root.
 Keep your existing CNAME file.
