@@ -784,7 +784,7 @@ footer {
   height: 100%;
   display: block;
   object-fit: cover;
-  object-position: center top;
+  object-position: center 62%;
 }
 
 .photo-member-card .member-info {
@@ -811,4 +811,10 @@ footer {
   .photo-member-card .member-photo {
     aspect-ratio: 4 / 5;
   }
+}
+
+
+/* JPAG v10 member photo crop fix */
+.actual-member-photo img {
+  object-position: center 62% !important;
 }
