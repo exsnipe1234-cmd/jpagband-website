@@ -1,11 +1,14 @@
-JPAG Website v13
+JPAG Website v14
 
 Updates:
-- Biography cards use real uploaded photos only.
-- Order: Jazz, Phoebe, Wero, Gerald.
-- Photos are fitted into the card frame using CSS cropping.
-- No AI-generated photos included.
-- Small SVG icons preserved.
+- Biography member photos now use the uploaded SVG bio images:
+  - jazz-bio.svg
+  - phoebe-bio.svg
+  - wero-bio.svg
+  - gerald-bio.svg
+- Member order remains: Jazz, Phoebe, Wero, Gerald.
+- Small social/contact icons preserved.
+- Gallery and Videos pages preserved.
 
 Upload all files inside this ZIP to your GitHub repository root.
 Keep your existing CNAME file.
