@@ -1,4 +1,4 @@
-JPAG Website v3
+JPAG Website v4
 
 Upload these files into the root of your GitHub repository:
 - index.html
@@ -7,5 +7,4 @@ Upload these files into the root of your GitHub repository:
 - instagram.svg
 - tiktok.svg
 
-Important:
 Do not upload the folder itself. Upload the files inside the folder.
