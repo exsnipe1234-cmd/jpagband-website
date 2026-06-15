@@ -1137,176 +1137,71 @@ footer {
 }
 
 
-/* JPAG v17 bio photo blend fix
-   Keeps faces/features unchanged, but visually blends white cutout edges into the neon theme. */
+/* JPAG v22 - clean biography rebuild with new PNG photos
+   No blending, no overlays, no filters, no old SVG bio images. */
+
+.members-section {
+  width: min(1350px, calc(100% - 32px));
+}
+
+.members-intro {
+  color: #c5cad8;
+  text-align: center;
+  font-size: 1.08rem;
+  line-height: 1.7;
+  max-width: 780px;
+  margin: -5px auto 42px;
+}
+
+.member-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 28px;
+}
+
+.clean-member-card {
+  padding: 0 !important;
+  min-height: 560px;
+  overflow: hidden;
+  border-radius: 30px;
+  background:
+    linear-gradient(180deg, rgba(255,255,255,0.06), rgba(255,255,255,0.02)),
+    rgba(5,5,16,0.92) !important;
+  box-shadow: 0 0 32px rgba(46,168,255,0.10);
+}
+
+.clean-member-card.pink-card {
+  border: 1px solid rgba(255,61,190,0.55) !important;
+  box-shadow: 0 0 26px rgba(255,61,190,0.13);
+}
+
+.clean-member-card.blue-card {
+  border: 1px solid rgba(46,168,255,0.55) !important;
+  box-shadow: 0 0 26px rgba(46,168,255,0.13);
+}
+
+.clean-member-photo,
 .member-photo,
 .actual-member-photo,
 .bio-member-photo,
 .member-image,
 .bio-photo {
   position: relative !important;
-  overflow: hidden !important;
-  background:
-    radial-gradient(circle at 50% 42%, rgba(255, 61, 190, 0.28), transparent 34%),
-    radial-gradient(circle at 48% 54%, rgba(46, 168, 255, 0.22), transparent 50%),
-    linear-gradient(180deg, rgba(8, 8, 24, 0.92), rgba(4, 4, 14, 0.98)) !important;
-}
-
-.member-photo::before,
-.actual-member-photo::before,
-.bio-member-photo::before,
-.member-image::before,
-.bio-photo::before {
-  content: "";
-  position: absolute;
-  inset: 7%;
-  z-index: 0;
-  pointer-events: none;
-  border-radius: 999px;
-  background:
-    radial-gradient(circle at center,
-      rgba(255, 61, 190, 0.30) 0%,
-      rgba(46, 168, 255, 0.22) 42%,
-      transparent 72%);
-  filter: blur(34px);
-  opacity: 0.95;
-}
-
-.member-photo::after,
-.actual-member-photo::after,
-.bio-member-photo::after,
-.member-image::after,
-.bio-photo::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  z-index: 2;
-  pointer-events: none;
-  background:
-    linear-gradient(180deg, transparent 54%, rgba(5, 5, 16, 0.58) 100%),
-    radial-gradient(circle at 50% 52%, transparent 38%, rgba(5, 5, 16, 0.28) 100%);
-}
-
-.member-photo img,
-.actual-member-photo img,
-.bio-member-photo img,
-.member-image img,
-.bio-photo img,
-img[src*="bio.svg"],
-img[src*="-bio.svg"] {
-  position: relative !important;
-  z-index: 1 !important;
   width: 100% !important;
-  height: 100% !important;
-  object-fit: contain !important;
-  object-position: center bottom !important;
-  filter:
-    brightness(0.94)
-    contrast(1.04)
-    saturate(1.03)
-    drop-shadow(0 0 18px rgba(255, 61, 190, 0.24))
-    drop-shadow(0 0 22px rgba(46, 168, 255, 0.18)) !important;
-}
-
-/* Prevent large social icons from returning */
-img.ui-icon,
-.nav-icon img,
-.contact-links img {
-  width: 16px !important;
-  height: 16px !important;
-  min-width: 16px !important;
-  min-height: 16px !important;
-  max-width: 16px !important;
-  max-height: 16px !important;
-  object-fit: contain !important;
-  flex: 0 0 16px !important;
-}
-
-.nav-icon img {
-  width: 15px !important;
-  height: 15px !important;
-  min-width: 15px !important;
-  min-height: 15px !important;
-  max-width: 15px !important;
-  max-height: 15px !important;
-  flex: 0 0 15px !important;
-}
-
-
-/* JPAG v18 - lighter bio photo blend
-   Keeps the neon blend, but makes faces/features clearly visible. */
-
-.actual-member-photo,
-.member-photo,
-.bio-member-photo,
-.member-image,
-.bio-photo {
-  background:
-    radial-gradient(circle at 50% 42%, rgba(255, 61, 190, 0.20), transparent 36%),
-    radial-gradient(circle at 48% 54%, rgba(46, 168, 255, 0.18), transparent 52%),
-    linear-gradient(180deg, rgba(8, 8, 24, 0.82), rgba(4, 4, 14, 0.95)) !important;
-}
-
-.actual-member-photo::before,
-.member-photo::before,
-.bio-member-photo::before,
-.member-image::before,
-.bio-photo::before {
-  opacity: 0.42 !important;
-  filter: blur(28px) !important;
-}
-
-.actual-member-photo::after,
-.member-photo::after,
-.bio-member-photo::after,
-.member-image::after,
-.bio-photo::after {
-  background:
-    linear-gradient(180deg, transparent 68%, rgba(5, 5, 16, 0.36) 100%),
-    radial-gradient(circle at 50% 52%, transparent 56%, rgba(5, 5, 16, 0.16) 100%) !important;
-  box-shadow:
-    inset 0 -65px 70px rgba(5,5,16,0.42),
-    inset 0 0 42px rgba(46,168,255,0.06) !important;
-}
-
-.actual-member-photo img,
-.member-photo img,
-.bio-member-photo img,
-.member-image img,
-.bio-photo img,
-img[src*="bio.svg"],
-img[src*="-bio.svg"] {
-  filter:
-    brightness(1.08)
-    contrast(1.03)
-    saturate(1.05)
-    drop-shadow(0 0 14px rgba(255, 61, 190, 0.18))
-    drop-shadow(0 0 18px rgba(46, 168, 255, 0.14)) !important;
-}
-
-.photo-member-card:hover .actual-member-photo img,
-.member-card:hover .member-photo img {
-  filter:
-    brightness(1.13)
-    contrast(1.04)
-    saturate(1.08)
-    drop-shadow(0 0 16px rgba(255, 61, 190, 0.22))
-    drop-shadow(0 0 20px rgba(46, 168, 255, 0.16)) !important;
-}
-
-
-/* JPAG v21 - REMOVE ALL BIO PHOTO BLENDS */
-/* Photos are displayed cleanly as uploaded. Website background/card borders stay neon. */
-
-.member-photo,
-.actual-member-photo,
-.bio-member-photo,
-.member-image,
-.bio-photo {
+  height: 430px !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  border: none !important;
+  border-radius: 30px 30px 0 0 !important;
   background: transparent !important;
   overflow: hidden !important;
+  box-shadow: none !important;
+  filter: none !important;
+  opacity: 1 !important;
 }
 
+.clean-member-photo::before,
+.clean-member-photo::after,
 .member-photo::before,
 .member-photo::after,
 .actual-member-photo::before,
@@ -1325,33 +1220,72 @@ img[src*="-bio.svg"] {
   opacity: 0 !important;
 }
 
+.clean-member-photo img,
 .member-photo img,
 .actual-member-photo img,
 .bio-member-photo img,
 .member-image img,
 .bio-photo img,
-img[src*="bio.svg"],
-img[src*="-bio.svg"],
-img[src*="gerald-bio.png"] {
+img[src="Jazz.png"],
+img[src="Phoebe.png"],
+img[src="Wero.png"],
+img[src="Gerald.png"] {
   position: relative !important;
   z-index: 1 !important;
+  display: block !important;
   width: 100% !important;
   height: 100% !important;
-  object-fit: contain !important;
-  object-position: center bottom !important;
+  object-fit: cover !important;
+  object-position: center center !important;
   filter: none !important;
   opacity: 1 !important;
   mix-blend-mode: normal !important;
   transform: none !important;
+  background: transparent !important;
 }
 
+.clean-member-card:hover .clean-member-photo img,
 .member-card:hover .member-photo img,
 .photo-member-card:hover .actual-member-photo img {
   filter: none !important;
   transform: none !important;
 }
 
-/* Preserve small UI icons */
+.clean-member-card .member-info {
+  padding: 28px 22px 36px !important;
+  text-align: center !important;
+  background:
+    linear-gradient(180deg, rgba(5,5,16,0.82), rgba(5,5,16,0.98)) !important;
+}
+
+.clean-member-card h3 {
+  color: #ffffff;
+  font-size: 1.7rem;
+  font-weight: 700;
+  margin-bottom: 12px;
+}
+
+.member-line {
+  width: 42px;
+  height: 4px;
+  border-radius: 999px;
+  background: #ff3dbe;
+  margin: 0 auto 18px;
+  box-shadow: 0 0 18px rgba(255,61,190,0.70);
+}
+
+.blue-line {
+  background: #2ea8ff;
+  box-shadow: 0 0 18px rgba(46,168,255,0.70);
+}
+
+.clean-member-card p {
+  color: #bfc6d8;
+  font-size: 1.05rem;
+  line-height: 1.6;
+}
+
+/* Keep UI icons small */
 img.ui-icon,
 .nav-icon img,
 .contact-links img {
@@ -1373,4 +1307,29 @@ img.ui-icon,
   max-width: 15px !important;
   max-height: 15px !important;
   flex: 0 0 15px !important;
+}
+
+@media (max-width: 1100px) {
+  .member-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+}
+
+@media (max-width: 720px) {
+  .member-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  .clean-member-card {
+    min-height: auto !important;
+  }
+
+  .clean-member-photo,
+  .member-photo,
+  .actual-member-photo,
+  .bio-member-photo,
+  .member-image,
+  .bio-photo {
+    height: 410px !important;
+  }
 }
