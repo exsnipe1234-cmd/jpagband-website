@@ -1093,3 +1093,141 @@ footer {
     height: 430px;
   }
 }
+
+
+/* JPAG v16 - blend Bio SVG white backgrounds into neon theme */
+.bio-svg-photo {
+  position: relative;
+  background:
+    radial-gradient(circle at 18% 20%, rgba(255, 61, 190, 0.38), transparent 38%),
+    radial-gradient(circle at 85% 22%, rgba(46, 168, 255, 0.38), transparent 42%),
+    linear-gradient(135deg, #050611 0%, #0b1230 45%, #18071d 100%) !important;
+}
+
+.bio-svg-photo img {
+  mix-blend-mode: multiply;
+  filter: contrast(1.08) saturate(1.08) brightness(0.98) !important;
+}
+
+.bio-svg-photo::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background:
+    linear-gradient(180deg, transparent 55%, rgba(5, 5, 16, 0.78) 100%),
+    radial-gradient(circle at 15% 18%, rgba(255, 61, 190, 0.22), transparent 42%),
+    radial-gradient(circle at 85% 18%, rgba(46, 168, 255, 0.22), transparent 42%);
+}
+
+.photo-member-card {
+  box-shadow:
+    0 0 24px rgba(46, 168, 255, 0.14),
+    0 0 24px rgba(255, 61, 190, 0.10) !important;
+}
+
+.photo-member-card:nth-child(1),
+.photo-member-card:nth-child(2) {
+  border-color: rgba(255, 61, 190, 0.55) !important;
+}
+
+.photo-member-card:nth-child(3),
+.photo-member-card:nth-child(4) {
+  border-color: rgba(46, 168, 255, 0.55) !important;
+}
+
+
+/* JPAG v17 bio photo blend fix
+   Keeps faces/features unchanged, but visually blends white cutout edges into the neon theme. */
+.member-photo,
+.actual-member-photo,
+.bio-member-photo,
+.member-image,
+.bio-photo {
+  position: relative !important;
+  overflow: hidden !important;
+  background:
+    radial-gradient(circle at 50% 42%, rgba(255, 61, 190, 0.28), transparent 34%),
+    radial-gradient(circle at 48% 54%, rgba(46, 168, 255, 0.22), transparent 50%),
+    linear-gradient(180deg, rgba(8, 8, 24, 0.92), rgba(4, 4, 14, 0.98)) !important;
+}
+
+.member-photo::before,
+.actual-member-photo::before,
+.bio-member-photo::before,
+.member-image::before,
+.bio-photo::before {
+  content: "";
+  position: absolute;
+  inset: 7%;
+  z-index: 0;
+  pointer-events: none;
+  border-radius: 999px;
+  background:
+    radial-gradient(circle at center,
+      rgba(255, 61, 190, 0.30) 0%,
+      rgba(46, 168, 255, 0.22) 42%,
+      transparent 72%);
+  filter: blur(34px);
+  opacity: 0.95;
+}
+
+.member-photo::after,
+.actual-member-photo::after,
+.bio-member-photo::after,
+.member-image::after,
+.bio-photo::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  pointer-events: none;
+  background:
+    linear-gradient(180deg, transparent 54%, rgba(5, 5, 16, 0.58) 100%),
+    radial-gradient(circle at 50% 52%, transparent 38%, rgba(5, 5, 16, 0.28) 100%);
+}
+
+.member-photo img,
+.actual-member-photo img,
+.bio-member-photo img,
+.member-image img,
+.bio-photo img,
+img[src*="bio.svg"],
+img[src*="-bio.svg"] {
+  position: relative !important;
+  z-index: 1 !important;
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: contain !important;
+  object-position: center bottom !important;
+  filter:
+    brightness(0.94)
+    contrast(1.04)
+    saturate(1.03)
+    drop-shadow(0 0 18px rgba(255, 61, 190, 0.24))
+    drop-shadow(0 0 22px rgba(46, 168, 255, 0.18)) !important;
+}
+
+/* Prevent large social icons from returning */
+img.ui-icon,
+.nav-icon img,
+.contact-links img {
+  width: 16px !important;
+  height: 16px !important;
+  min-width: 16px !important;
+  min-height: 16px !important;
+  max-width: 16px !important;
+  max-height: 16px !important;
+  object-fit: contain !important;
+  flex: 0 0 16px !important;
+}
+
+.nav-icon img {
+  width: 15px !important;
+  height: 15px !important;
+  min-width: 15px !important;
+  min-height: 15px !important;
+  max-width: 15px !important;
+  max-height: 15px !important;
+  flex: 0 0 15px !important;
+}

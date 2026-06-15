@@ -1,14 +1,10 @@
-JPAG Website v14
+JPAG Website v17
 
-Updates:
-- Biography member photos now use the uploaded SVG bio images:
-  - jazz-bio.svg
-  - phoebe-bio.svg
-  - wero-bio.svg
-  - gerald-bio.svg
-- Member order remains: Jazz, Phoebe, Wero, Gerald.
-- Small social/contact icons preserved.
-- Gallery and Videos pages preserved.
+Update:
+- Bio cutout photos now have blue/pink neon blend behind them.
+- White cutout edges are visually softened with theme-coloured glow.
+- Faces/features are unchanged.
+- Small icon rules are preserved.
 
-Upload all files inside this ZIP to your GitHub repository root.
-Keep your existing CNAME file.
+Upload all files inside this ZIP to GitHub root.
+Keep your CNAME file.
