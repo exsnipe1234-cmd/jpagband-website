@@ -642,3 +642,120 @@ footer {
     font-size: 0.88rem;
   }
 }
+
+
+/* JPAG v8 biography member photo cards */
+.members-section {
+  width: min(1350px, calc(100% - 32px));
+}
+
+.members-intro {
+  color: #c5cad8;
+  text-align: center;
+  font-size: 1.08rem;
+  line-height: 1.7;
+  max-width: 780px;
+  margin: -5px auto 42px;
+}
+
+.member-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 28px;
+}
+
+.member-card {
+  position: relative;
+  overflow: hidden;
+  border-radius: 30px;
+  padding: 26px 24px 36px;
+  min-height: 430px;
+  text-align: center;
+  background:
+    linear-gradient(160deg, rgba(255,255,255,0.10), rgba(255,255,255,0.035)),
+    radial-gradient(circle at 20% 0%, rgba(46,168,255,0.14), transparent 34%),
+    radial-gradient(circle at 80% 100%, rgba(255,61,190,0.15), transparent 40%);
+  border: 1px solid rgba(255,255,255,0.14);
+  box-shadow: 0 0 34px rgba(46,168,255,0.10);
+  backdrop-filter: blur(18px);
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+}
+
+.member-card:nth-child(odd) {
+  border-color: rgba(255,61,190,0.42);
+}
+
+.member-card:nth-child(even) {
+  border-color: rgba(46,168,255,0.42);
+}
+
+.member-card:hover {
+  transform: translateY(-7px);
+  box-shadow: 0 0 40px rgba(255,61,190,0.16);
+}
+
+.member-photo {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  border-radius: 20px;
+  overflow: hidden;
+  margin-bottom: 28px;
+  background:
+    linear-gradient(135deg, rgba(255,255,255,0.18), rgba(255,255,255,0.04)),
+    radial-gradient(circle at 20% 20%, rgba(46,168,255,0.20), transparent 34%),
+    radial-gradient(circle at 80% 80%, rgba(255,61,190,0.20), transparent 36%);
+  border: 1px solid rgba(255,255,255,0.12);
+}
+
+.placeholder-member-photo::after {
+  content: "Photo Placeholder";
+  height: 100%;
+  display: grid;
+  place-items: center;
+  color: #c5cad8;
+  font-weight: 600;
+  letter-spacing: 0.4px;
+}
+
+.member-card h3 {
+  color: #ffffff;
+  font-size: 1.7rem;
+  font-weight: 700;
+  margin-bottom: 12px;
+}
+
+.member-line {
+  width: 42px;
+  height: 4px;
+  border-radius: 999px;
+  background: #ff3dbe;
+  margin: 0 auto 18px;
+  box-shadow: 0 0 18px rgba(255,61,190,0.70);
+}
+
+.blue-line {
+  background: #2ea8ff;
+  box-shadow: 0 0 18px rgba(46,168,255,0.70);
+}
+
+.member-card p {
+  color: #bfc6d8;
+  font-size: 1.05rem;
+  line-height: 1.6;
+}
+
+@media (max-width: 1100px) {
+  .member-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 720px) {
+  .member-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .member-card {
+    min-height: auto;
+  }
+}

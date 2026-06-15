@@ -1,4 +1,4 @@
-JPAG Website v7
+JPAG Website v8
 
 Upload these files into the root of your GitHub repository:
 - index.html
@@ -12,18 +12,12 @@ Upload these files into the root of your GitHub repository:
 - gmail.svg
 - whatsapp.svg
 
-Do not upload the folder itself. Upload the files inside the folder.
-
 Keep your existing CNAME file.
 
-Gallery:
-- Clean photo placeholders only.
+Biography member order:
+1. Jazz - Vocals
+2. Wero - Guitar
+3. Phoebe - Keyboard
+4. Gerald - Vocals / Drums
 
-Videos:
-- Clean video placeholders only.
-
-Members:
-- Gerald: Vocals / Drums
-- Phoebe: Keyboard
-- Wero: Guitar
-- Jazz: Vocals
+Member cards include photo placeholders above names.
