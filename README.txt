@@ -1,16 +1,12 @@
-JPAG Website v22
+JPAG Website v23
 
-Clean biography rebuild:
-- Removed old bio SVG setup.
-- Removed all bio blend/filter/overlay effects.
-- Uses new PNG photos only:
-  Jazz.png
-  Phoebe.png
-  Wero.png
-  Gerald.png
-- Order: Jazz, Phoebe, Wero, Gerald.
-- Neon card border remains.
-- Small icon rules preserved.
+Updates:
+- Biography title changed to "Meet The Band!!"
+- Removed "OUR MEMBERS"
+- Title font enlarged
+- Added subtle hover animation on member cards
+- Clean PNG photo setup from v22 preserved
+- No blending/filters added
 
 Upload all files inside this ZIP to GitHub root.
 Keep your CNAME file.
