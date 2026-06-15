@@ -1231,3 +1231,65 @@ img.ui-icon,
   max-height: 15px !important;
   flex: 0 0 15px !important;
 }
+
+
+/* JPAG v18 - lighter bio photo blend
+   Keeps the neon blend, but makes faces/features clearly visible. */
+
+.actual-member-photo,
+.member-photo,
+.bio-member-photo,
+.member-image,
+.bio-photo {
+  background:
+    radial-gradient(circle at 50% 42%, rgba(255, 61, 190, 0.20), transparent 36%),
+    radial-gradient(circle at 48% 54%, rgba(46, 168, 255, 0.18), transparent 52%),
+    linear-gradient(180deg, rgba(8, 8, 24, 0.82), rgba(4, 4, 14, 0.95)) !important;
+}
+
+.actual-member-photo::before,
+.member-photo::before,
+.bio-member-photo::before,
+.member-image::before,
+.bio-photo::before {
+  opacity: 0.42 !important;
+  filter: blur(28px) !important;
+}
+
+.actual-member-photo::after,
+.member-photo::after,
+.bio-member-photo::after,
+.member-image::after,
+.bio-photo::after {
+  background:
+    linear-gradient(180deg, transparent 68%, rgba(5, 5, 16, 0.36) 100%),
+    radial-gradient(circle at 50% 52%, transparent 56%, rgba(5, 5, 16, 0.16) 100%) !important;
+  box-shadow:
+    inset 0 -65px 70px rgba(5,5,16,0.42),
+    inset 0 0 42px rgba(46,168,255,0.06) !important;
+}
+
+.actual-member-photo img,
+.member-photo img,
+.bio-member-photo img,
+.member-image img,
+.bio-photo img,
+img[src*="bio.svg"],
+img[src*="-bio.svg"] {
+  filter:
+    brightness(1.08)
+    contrast(1.03)
+    saturate(1.05)
+    drop-shadow(0 0 14px rgba(255, 61, 190, 0.18))
+    drop-shadow(0 0 18px rgba(46, 168, 255, 0.14)) !important;
+}
+
+.photo-member-card:hover .actual-member-photo img,
+.member-card:hover .member-photo img {
+  filter:
+    brightness(1.13)
+    contrast(1.04)
+    saturate(1.08)
+    drop-shadow(0 0 16px rgba(255, 61, 190, 0.22))
+    drop-shadow(0 0 20px rgba(46, 168, 255, 0.16)) !important;
+}

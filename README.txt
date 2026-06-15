@@ -1,10 +1,10 @@
-JPAG Website v17
+JPAG Website v18
 
 Update:
-- Bio cutout photos now have blue/pink neon blend behind them.
-- White cutout edges are visually softened with theme-coloured glow.
-- Faces/features are unchanged.
-- Small icon rules are preserved.
+- Bio photos are brighter and easier to see.
+- Neon blend is still present, but less dark.
+- Member faces/features remain unchanged.
+- Small icon rules preserved.
 
 Upload all files inside this ZIP to GitHub root.
 Keep your CNAME file.
