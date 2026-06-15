@@ -3,217 +3,120 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="JPAG Music - Singapore live band for busking, corporate events, weddings, birthday parties and school events." />
   <title>JPAG Music | Singapore Live Band</title>
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: Arial, Helvetica, sans-serif;
-    }
-
-    body {
-      background: radial-gradient(circle at top, #15103a, #050510 60%);
-      color: white;
-      overflow-x: hidden;
-    }
-
-    header {
-      min-height: 100vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      padding: 40px 20px;
-    }
-
-    .hero {
-      max-width: 900px;
-    }
-
-    .logo {
-      width: 320px;
-      max-width: 85%;
-      filter: drop-shadow(0 0 25px #ff3dbe);
-      margin-bottom: 25px;
-    }
-
-    h1 {
-      font-size: 4rem;
-      letter-spacing: 4px;
-      background: linear-gradient(90deg, #2ea8ff, #ff3dbe);
-      -webkit-background-clip: text;
-      color: transparent;
-      text-shadow: 0 0 30px rgba(255, 61, 190, 0.4);
-    }
-
-    .tagline {
-      font-size: 1.4rem;
-      margin: 15px 0 30px;
-      color: #ddd;
-    }
-
-    .buttons a {
-      display: inline-block;
-      margin: 10px;
-      padding: 14px 28px;
-      border-radius: 999px;
-      text-decoration: none;
-      font-weight: bold;
-      color: white;
-      background: linear-gradient(90deg, #2ea8ff, #ff3dbe);
-      box-shadow: 0 0 18px rgba(255, 61, 190, 0.5);
-      transition: 0.3s;
-    }
-
-    .buttons a:hover {
-      transform: scale(1.05);
-      box-shadow: 0 0 30px rgba(46, 168, 255, 0.8);
-    }
-
-    section {
-      padding: 80px 20px;
-      max-width: 1100px;
-      margin: auto;
-    }
-
-    h2 {
-      font-size: 2.4rem;
-      margin-bottom: 25px;
-      color: #ff3dbe;
-      text-align: center;
-    }
-
-    .about {
-      text-align: center;
-      font-size: 1.1rem;
-      line-height: 1.8;
-      color: #ddd;
-      max-width: 850px;
-      margin: auto;
-    }
-
-    .services {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 25px;
-      margin-top: 40px;
-    }
-
-    .card {
-      background: rgba(255, 255, 255, 0.06);
-      border: 1px solid rgba(255, 255, 255, 0.15);
-      border-radius: 20px;
-      padding: 30px;
-      text-align: center;
-      box-shadow: 0 0 25px rgba(46, 168, 255, 0.15);
-    }
-
-    .card h3 {
-      font-size: 1.3rem;
-      color: #2ea8ff;
-      margin-bottom: 10px;
-    }
-
-    .contact {
-      text-align: center;
-      font-size: 1.1rem;
-      line-height: 2;
-    }
-
-    .contact a {
-      color: #ff3dbe;
-      text-decoration: none;
-      font-weight: bold;
-    }
-
-    footer {
-      text-align: center;
-      padding: 30px;
-      color: #aaa;
-      font-size: 0.9rem;
-      border-top: 1px solid rgba(255,255,255,0.1);
-    }
-
-    @media (max-width: 600px) {
-      h1 {
-        font-size: 2.6rem;
-      }
-
-      .tagline {
-        font-size: 1.05rem;
-      }
-    }
-  </style>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
-  <header>
-    <div class="hero">
-      <img src="jpag-logo.png" alt="JPAG Music Logo" class="logo" />
+  <nav class="navbar">
+    <a href="#home" class="nav-logo">JPAG</a>
+    <div class="nav-links">
+      <a href="#about">About</a>
+      <a href="#services">Services</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </nav>
+
+  <header id="home" class="hero-section">
+    <div class="glow glow-blue"></div>
+    <div class="glow glow-pink"></div>
+
+    <div class="hero-content">
+      <img src="jpag-logo.png" alt="JPAG Music Logo" class="main-logo" />
+      <p class="eyebrow">Singapore Live Band</p>
       <h1>JPAG Music</h1>
       <p class="tagline">Busking • Events • Weddings • Corporate Functions</p>
 
-      <div class="buttons">
-        <a href="https://wa.me/6591140321?text=Hi%20JPAG%20Music,%20I%20would%20like%20to%20enquire%20about%20a%20performance%20booking." target="_blank">Book JPAG Now</a>
-        <a href="https://www.instagram.com/jpagband/" target="_blank">Instagram</a>
-        <a href="https://www.tiktok.com/@jpagband" target="_blank">TikTok</a>
+      <div class="hero-buttons">
+        <a class="btn btn-primary" href="https://wa.me/6591140321?text=Hi%20JPAG%20Music,%20I%20would%20like%20to%20enquire%20about%20a%20performance%20booking." target="_blank">
+          Book JPAG Now
+        </a>
+        <a class="btn btn-secondary" href="https://www.instagram.com/jpagband/" target="_blank">
+          Instagram
+        </a>
+        <a class="btn btn-secondary" href="https://www.tiktok.com/@jpagband" target="_blank">
+          TikTok
+        </a>
       </div>
     </div>
   </header>
 
-  <section>
-    <h2>About Us</h2>
-    <p class="about">
-      JPAG Music is a Singapore-based live performance group specialising in busking,
-      private events and corporate entertainment. Our team combines strong vocals,
-      live instrumentation and crowd engagement to create memorable experiences for
-      audiences of all ages.
-    </p>
-  </section>
-
-  <section>
-    <h2>What We Do</h2>
-    <div class="services">
-      <div class="card">
-        <h3>Busking</h3>
-        <p>Live street performances with energy, interaction and crowd-friendly music.</p>
+  <main>
+    <section id="about" class="section">
+      <div class="section-card">
+        <p class="section-label">About Us</p>
+        <h2>Live music with energy, style and connection.</h2>
+        <p class="about-text">
+          JPAG Music is a Singapore-based live performance group specialising in busking,
+          private events and corporate entertainment. Our team combines strong vocals,
+          live instrumentation and crowd engagement to create memorable experiences for
+          audiences of all ages.
+        </p>
       </div>
+    </section>
 
-      <div class="card">
-        <h3>Corporate Events</h3>
-        <p>Professional live entertainment for company events, launches and celebrations.</p>
+    <section id="services" class="section">
+      <p class="section-label center">What We Do</p>
+      <h2 class="center">Performance Services</h2>
+
+      <div class="services-grid">
+        <article class="service-card">
+          <span>01</span>
+          <h3>Busking</h3>
+          <p>Live street performances with energy, interaction and crowd-friendly music.</p>
+        </article>
+
+        <article class="service-card">
+          <span>02</span>
+          <h3>Corporate Events</h3>
+          <p>Professional live entertainment for company events, launches and celebrations.</p>
+        </article>
+
+        <article class="service-card">
+          <span>03</span>
+          <h3>Weddings</h3>
+          <p>Live music for wedding receptions, solemnisation and special moments.</p>
+        </article>
+
+        <article class="service-card">
+          <span>04</span>
+          <h3>Birthday Parties</h3>
+          <p>Fun and engaging performances for birthdays and private celebrations.</p>
+        </article>
+
+        <article class="service-card">
+          <span>05</span>
+          <h3>School Events</h3>
+          <p>Live entertainment suitable for school programmes, concerts and celebrations.</p>
+        </article>
       </div>
+    </section>
 
-      <div class="card">
-        <h3>Weddings</h3>
-        <p>Live music for wedding receptions, solemnisation and special moments.</p>
+    <section id="contact" class="section contact-section">
+      <div class="contact-card">
+        <p class="section-label">Bookings</p>
+        <h2>Ready to bring JPAG to your event?</h2>
+        <p>
+          Contact us for busking enquiries, event performances, weddings, birthdays and school events.
+        </p>
+
+        <div class="contact-list">
+          <a href="https://wa.me/6591140321" target="_blank">WhatsApp: 9114 0321</a>
+          <a href="mailto:thejpagband@gmail.com">Email: thejpagband@gmail.com</a>
+          <a href="https://www.instagram.com/jpagband/" target="_blank">Instagram: @jpagband</a>
+          <a href="https://www.tiktok.com/@jpagband" target="_blank">TikTok: @jpagband</a>
+        </div>
       </div>
+    </section>
+  </main>
 
-      <div class="card">
-        <h3>Birthday Parties</h3>
-        <p>Fun and engaging performances for birthdays and private celebrations.</p>
-      </div>
-
-      <div class="card">
-        <h3>School Events</h3>
-        <p>Live entertainment suitable for school programmes, concerts and celebrations.</p>
-      </div>
-    </div>
-  </section>
-
-  <section>
-    <h2>Contact Us</h2>
-    <div class="contact">
-      <p>WhatsApp: <a href="https://wa.me/6591140321" target="_blank">9114 0321</a></p>
-      <p>Email: <a href="mailto:thejpagband@gmail.com">thejpagband@gmail.com</a></p>
-      <p>Instagram: <a href="https://www.instagram.com/jpagband/" target="_blank">@jpagband</a></p>
-      <p>TikTok: <a href="https://www.tiktok.com/@jpagband" target="_blank">@jpagband</a></p>
-    </div>
-  </section>
+  <a class="floating-whatsapp" href="https://wa.me/6591140321?text=Hi%20JPAG%20Music,%20I%20would%20like%20to%20enquire%20about%20a%20performance%20booking." target="_blank">
+    WhatsApp
+  </a>
 
   <footer>
-    © 2026 JPAG Music. All rights reserved.
+    <p>© 2026 JPAG Music. All rights reserved.</p>
   </footer>
 
 </body>
