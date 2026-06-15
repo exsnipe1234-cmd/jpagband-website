@@ -1,12 +1,11 @@
-# JPAG Band Website
+JPAG Website v2
 
-Files:
+Upload these files into the root of your GitHub repository:
 - index.html
 - style.css
 - jpag-logo.png
+- instagram-icon.png
+- tiktok-icon.png
 
-Upload all files to your GitHub repository root:
-https://github.com/exsnipe1234-cmd/jpagband-website
-
-Then commit changes and refresh:
-https://jpagband.com
+Important:
+Do not upload the folder itself. Upload the files inside the folder.
