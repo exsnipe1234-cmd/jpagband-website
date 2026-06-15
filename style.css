@@ -105,7 +105,7 @@ a {
 .nav-links {
   display: flex;
   justify-content: center;
-  gap: 22px;
+  gap: 18px;
 }
 
 .nav-links a {
@@ -162,6 +162,10 @@ a {
 
 .page-hero {
   min-height: 76vh;
+}
+
+.compact-page-hero {
+  min-height: 55vh;
 }
 
 .hero-glow {
@@ -426,6 +430,94 @@ h2 {
   font-weight: 600;
 }
 
+.media-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 22px;
+}
+
+.placeholder-card {
+  position: relative;
+  min-height: 260px;
+  border-radius: 28px;
+  overflow: hidden;
+  border: 1px solid rgba(255,255,255,0.12);
+  background:
+    linear-gradient(135deg, rgba(255,255,255,0.09), rgba(255,255,255,0.025)),
+    radial-gradient(circle at 20% 20%, rgba(46,168,255,0.18), transparent 34%),
+    radial-gradient(circle at 80% 80%, rgba(255,61,190,0.16), transparent 36%);
+  box-shadow: 0 0 34px rgba(46,168,255,0.09);
+  backdrop-filter: blur(16px);
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+}
+
+.placeholder-card:hover {
+  transform: translateY(-6px);
+  border-color: rgba(255,255,255,0.22);
+  box-shadow: 0 0 38px rgba(255,61,190,0.14);
+}
+
+.placeholder-shine {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(120deg, transparent 20%, rgba(255,255,255,0.12), transparent 45%);
+  transform: translateX(-100%);
+  animation: placeholderShine 5s ease-in-out infinite;
+}
+
+@keyframes placeholderShine {
+  0%, 55% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+.photo-placeholder::after {
+  content: "Photo Placeholder";
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  color: #c5cad8;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+
+.video-placeholder::after {
+  content: "Video Placeholder";
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  color: #c5cad8;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+
+.play-mark {
+  position: absolute;
+  width: 54px;
+  height: 54px;
+  left: 50%;
+  top: 40%;
+  transform: translate(-50%, -50%);
+  border-radius: 999px;
+  background: rgba(255,255,255,0.10);
+  border: 1px solid rgba(255,255,255,0.16);
+}
+
+.play-mark::after {
+  content: "";
+  position: absolute;
+  left: 21px;
+  top: 16px;
+  border-left: 16px solid rgba(255,255,255,0.78);
+  border-top: 10px solid transparent;
+  border-bottom: 10px solid transparent;
+}
+
 .contact-section {
   padding-bottom: 100px;
 }
@@ -486,7 +578,8 @@ footer {
 
 @media (max-width: 980px) {
   .services-grid,
-  .highlight-grid {
+  .highlight-grid,
+  .media-grid {
     grid-template-columns: repeat(2, 1fr);
   }
 
@@ -524,18 +617,23 @@ footer {
   }
 
   .hero {
-    padding-top: 145px;
+    padding-top: 155px;
   }
 
   .services-grid,
   .bio-grid,
-  .highlight-grid {
+  .highlight-grid,
+  .media-grid {
     grid-template-columns: 1fr;
   }
 
   .service-card:last-child,
   .highlight-card:last-child {
     grid-column: auto;
+  }
+
+  .placeholder-card {
+    min-height: 220px;
   }
 
   .floating-whatsapp {
