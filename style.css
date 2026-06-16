@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600;700;800&display=swap');
 * {
   margin: 0;
   padding: 0;
@@ -1390,5 +1391,36 @@ img.ui-icon,
   .meet-band-title {
     font-size: clamp(3.2rem, 14vw, 5rem);
     letter-spacing: -1px;
+  }
+}
+
+
+/* JPAG v24 - nicer Biography title font */
+.meet-band-title {
+  font-family: 'Bebas Neue', Arial, Helvetica, sans-serif !important;
+  font-size: clamp(5rem, 9vw, 8rem) !important;
+  font-weight: 400 !important;
+  letter-spacing: 4px !important;
+  line-height: 0.95 !important;
+  margin-bottom: 52px !important;
+  text-transform: uppercase !important;
+  background: linear-gradient(90deg, #67cfff 0%, #f5f0ff 46%, #ff6edb 100%) !important;
+  -webkit-background-clip: text !important;
+  color: transparent !important;
+  text-shadow:
+    0 0 18px rgba(46, 168, 255, 0.18),
+    0 0 22px rgba(255, 61, 190, 0.16) !important;
+}
+
+/* Remove extra spacing left by deleted intro sentence */
+.members-section .members-intro {
+  display: none !important;
+}
+
+@media (max-width: 720px) {
+  .meet-band-title {
+    font-size: clamp(4rem, 18vw, 6rem) !important;
+    letter-spacing: 2px !important;
+    margin-bottom: 36px !important;
   }
 }

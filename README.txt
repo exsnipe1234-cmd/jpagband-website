@@ -1,12 +1,11 @@
-JPAG Website v23
+JPAG Website v24
 
 Updates:
-- Biography title changed to "Meet The Band!!"
-- Removed "OUR MEMBERS"
-- Title font enlarged
-- Added subtle hover animation on member cards
-- Clean PNG photo setup from v22 preserved
-- No blending/filters added
+- Biography heading styled as "Meet The Band!!"
+- Removed the sentence under the biography heading.
+- Homepage changed from "JPAG Music" to "J.P.A.G Band"
+- Clean PNG bio photo setup preserved.
+- No photo blending changes.
 
 Upload all files inside this ZIP to GitHub root.
 Keep your CNAME file.
