@@ -1478,7 +1478,7 @@ img.ui-icon,
   }
 }
 
-/* JPAG v30 - homepage random popout background (no MP4 background) */
+/* JPAG v34 - homepage popout background now uses looping animated member GIFs */
 .hero-pop-bg {
   overflow: hidden;
   background:
@@ -1498,9 +1498,9 @@ img.ui-icon,
 
 .popout-character {
   position: absolute;
-  width: clamp(86px, 9vw, 150px);
+  width: clamp(110px, 11vw, 190px);
   aspect-ratio: 1 / 1;
-  background-image: url("jpag-logo.png");
+  background-image: url("Jazz Animated.gif");
   background-size: contain;
   background-position: center;
   background-repeat: no-repeat;
