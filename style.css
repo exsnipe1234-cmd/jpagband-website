@@ -1477,3 +1477,103 @@ img.ui-icon,
     margin-bottom: 36px !important;
   }
 }
+
+/* JPAG v30 - homepage random popout background (no MP4 background) */
+.hero-pop-bg {
+  overflow: hidden;
+  background:
+    radial-gradient(circle at 18% 18%, rgba(46, 168, 255, 0.20), transparent 34%),
+    radial-gradient(circle at 82% 22%, rgba(255, 61, 190, 0.18), transparent 34%),
+    radial-gradient(circle at 50% 78%, rgba(107, 76, 255, 0.16), transparent 38%),
+    linear-gradient(135deg, #061325 0%, #090713 46%, #1a0622 100%);
+}
+
+.popout-character-layer {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.popout-character {
+  position: absolute;
+  width: clamp(86px, 9vw, 150px);
+  aspect-ratio: 1 / 1;
+  background-image: url("jpag-logo.png");
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  opacity: 0;
+  filter:
+    drop-shadow(0 0 18px rgba(46, 168, 255, 0.35))
+    drop-shadow(0 0 22px rgba(255, 61, 190, 0.24));
+  transform: translateX(-160px) scale(0.72) rotate(-5deg);
+  animation: popRunAcross 18s linear infinite;
+}
+
+.popout-1 { top: 18%; left: -12%; animation-delay: 0s; }
+.popout-2 { top: 34%; left: -14%; animation-delay: 4.3s; width: clamp(70px, 7vw, 118px); }
+.popout-3 { top: 58%; left: -18%; animation-delay: 8.6s; width: clamp(96px, 10vw, 170px); }
+.popout-4 { top: 24%; left: -15%; animation-delay: 12.9s; width: clamp(62px, 6.5vw, 105px); }
+.popout-5 { top: 71%; left: -20%; animation-delay: 2.1s; width: clamp(76px, 8vw, 132px); }
+.popout-6 { top: 45%; left: -17%; animation-delay: 10.7s; width: clamp(88px, 8.8vw, 145px); }
+
+@keyframes popRunAcross {
+  0% {
+    opacity: 0;
+    transform: translateX(-180px) translateY(18px) scale(0.62) rotate(-7deg);
+  }
+  8% {
+    opacity: 0.18;
+  }
+  18% {
+    opacity: 0.34;
+    transform: translateX(18vw) translateY(-8px) scale(0.82) rotate(4deg);
+  }
+  42% {
+    opacity: 0.22;
+    transform: translateX(54vw) translateY(12px) scale(0.70) rotate(-3deg);
+  }
+  62% {
+    opacity: 0.30;
+    transform: translateX(88vw) translateY(-10px) scale(0.88) rotate(5deg);
+  }
+  74% {
+    opacity: 0;
+    transform: translateX(116vw) translateY(16px) scale(0.60) rotate(-6deg);
+  }
+  100% {
+    opacity: 0;
+    transform: translateX(116vw) translateY(16px) scale(0.60) rotate(-6deg);
+  }
+}
+
+.hero-pop-bg .hero-glow,
+.hero-pop-bg .hero-inner {
+  z-index: 2;
+}
+
+.hero-pop-bg::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  background:
+    radial-gradient(circle at center, rgba(3, 5, 14, 0.08), rgba(3, 5, 14, 0.58) 68%, rgba(3, 5, 14, 0.82)),
+    linear-gradient(180deg, rgba(3, 5, 14, 0.22), rgba(3, 5, 14, 0.68));
+}
+
+@media (max-width: 720px) {
+  .popout-character {
+    width: clamp(60px, 18vw, 96px);
+  }
+
+  .popout-1 { top: 16%; }
+  .popout-2 { top: 30%; }
+  .popout-3 { top: 66%; }
+  .popout-4 { top: 48%; }
+  .popout-5 { top: 78%; }
+  .popout-6 { top: 38%; }
+}
