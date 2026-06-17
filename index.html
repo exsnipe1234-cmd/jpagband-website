@@ -174,33 +174,23 @@
 
   <script>
     (function () {
-      const spotlight = document.querySelector('.cursor-spotlight');
+      var spotlight = document.querySelector('.cursor-spotlight');
       if (!spotlight || window.matchMedia('(hover: none)').matches) return;
 
-      let targetX = window.innerWidth / 2;
-      let targetY = window.innerHeight / 2;
-      let currentX = targetX;
-      let currentY = targetY;
-
-      function animateSpotlight() {
-        currentX += (targetX - currentX) * 0.14;
-        currentY += (targetY - currentY) * 0.14;
-        spotlight.style.left = currentX + 'px';
-        spotlight.style.top = currentY + 'px';
-        requestAnimationFrame(animateSpotlight);
-      }
-
-      window.addEventListener('mousemove', function (event) {
-        targetX = event.clientX;
-        targetY = event.clientY;
-        spotlight.classList.add('is-active');
+      var visible = false;
+      document.addEventListener('mousemove', function (event) {
+        spotlight.style.left = event.clientX + 'px';
+        spotlight.style.top = event.clientY + 'px';
+        if (!visible) {
+          spotlight.classList.add('is-active');
+          visible = true;
+        }
       });
 
       document.addEventListener('mouseleave', function () {
         spotlight.classList.remove('is-active');
+        visible = false;
       });
-
-      animateSpotlight();
     })();
   </script>
 

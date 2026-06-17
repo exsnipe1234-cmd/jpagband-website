@@ -1738,7 +1738,7 @@ background:transparent;
   z-index: 0;
   pointer-events: none;
   overflow: hidden;
-  opacity: 0.78;
+  opacity: 0.70;
 }
 
 .site-float-char {
@@ -1823,24 +1823,24 @@ background:transparent;
 
 .cursor-spotlight {
   position: fixed;
-  width: 520px;
-  height: 520px;
+  width: 420px;
+  height: 420px;
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
-  z-index: 1;
+  z-index: 9999;
   pointer-events: none;
   opacity: 0;
   border-radius: 50%;
   background:
-    radial-gradient(circle, rgba(255, 87, 216, 0.22) 0%, rgba(46, 168, 255, 0.13) 28%, rgba(133, 72, 255, 0.07) 46%, transparent 70%);
+    radial-gradient(circle, rgba(255, 87, 216, 0.50) 0%, rgba(46, 168, 255, 0.30) 25%, rgba(133, 72, 255, 0.16) 48%, transparent 72%);
   mix-blend-mode: screen;
-  filter: blur(10px);
-  transition: opacity 0.25s ease;
+  filter: blur(18px);
+  transition: opacity 0.18s ease;
 }
 
 .cursor-spotlight.is-active {
-  opacity: 1;
+  opacity: 0.85;
 }
 
 .navbar,
