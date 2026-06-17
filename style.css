@@ -1577,3 +1577,13 @@ img.ui-icon,
   .popout-5 { top: 78%; }
   .popout-6 { top: 38%; }
 }
+
+
+.member-animation{
+display:block;
+width:140px;
+margin:12px auto 0;
+border-radius:12px;
+pointer-events:none;
+background:transparent;
+}
