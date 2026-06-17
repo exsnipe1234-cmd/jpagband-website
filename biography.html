@@ -8,6 +8,14 @@
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
+  <div class="site-character-bg" aria-hidden="true">
+    <span class="site-float-char site-float-jazz"></span>
+    <span class="site-float-char site-float-phoebe"></span>
+    <span class="site-float-char site-float-wero"></span>
+    <span class="site-float-char site-float-gerald"></span>
+  </div>
+  <div class="cursor-spotlight" aria-hidden="true"></div>
+
   <nav class="navbar">
     <a href="index.html#home" class="nav-brand">JPAG</a>
 
@@ -176,6 +184,38 @@
   <footer>
     <p>© 2026 J.P.A.G Band. All rights reserved.</p>
   </footer>
+
+  <script>
+    (function () {
+      const spotlight = document.querySelector('.cursor-spotlight');
+      if (!spotlight || window.matchMedia('(hover: none)').matches) return;
+
+      let targetX = window.innerWidth / 2;
+      let targetY = window.innerHeight / 2;
+      let currentX = targetX;
+      let currentY = targetY;
+
+      function animateSpotlight() {
+        currentX += (targetX - currentX) * 0.14;
+        currentY += (targetY - currentY) * 0.14;
+        spotlight.style.left = currentX + 'px';
+        spotlight.style.top = currentY + 'px';
+        requestAnimationFrame(animateSpotlight);
+      }
+
+      window.addEventListener('mousemove', function (event) {
+        targetX = event.clientX;
+        targetY = event.clientY;
+        spotlight.classList.add('is-active');
+      });
+
+      document.addEventListener('mouseleave', function () {
+        spotlight.classList.remove('is-active');
+      });
+
+      animateSpotlight();
+    })();
+  </script>
 
 </body>
 </html>

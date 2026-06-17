@@ -1729,3 +1729,139 @@ background:transparent;
     width: 118px !important;
   }
 }
+
+
+/* JPAG v36 - global animated GIF background + cursor spotlight */
+.site-character-bg {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  overflow: hidden;
+  opacity: 0.78;
+}
+
+.site-float-char {
+  position: absolute;
+  width: clamp(72px, 8vw, 138px);
+  aspect-ratio: 1 / 1;
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  opacity: 0;
+  mix-blend-mode: screen;
+  filter:
+    drop-shadow(0 0 16px rgba(255, 61, 190, 0.38))
+    drop-shadow(0 0 22px rgba(46, 168, 255, 0.30));
+  animation: siteCharacterDrift 24s linear infinite;
+}
+
+.site-float-jazz {
+  background-image: url("Jazz Animated.gif");
+  top: 15%;
+  left: -14%;
+  width: clamp(78px, 8.5vw, 148px);
+  animation-delay: 0s;
+  animation-duration: 25s;
+}
+
+.site-float-phoebe {
+  background-image: url("Phoebe Animated.gif");
+  top: 38%;
+  left: -18%;
+  width: clamp(72px, 8vw, 136px);
+  animation-delay: 5.5s;
+  animation-duration: 27s;
+}
+
+.site-float-wero {
+  background-image: url("Wero Animated.gif");
+  top: 61%;
+  left: -16%;
+  width: clamp(84px, 9vw, 154px);
+  animation-delay: 11s;
+  animation-duration: 24s;
+}
+
+.site-float-gerald {
+  background-image: url("Gerald Animated.gif");
+  top: 76%;
+  left: -20%;
+  width: clamp(80px, 8.5vw, 146px);
+  animation-delay: 16.5s;
+  animation-duration: 26s;
+}
+
+@keyframes siteCharacterDrift {
+  0% {
+    opacity: 0;
+    transform: translateX(-160px) translateY(16px) scale(0.70) rotate(-5deg);
+  }
+  10% { opacity: 0.22; }
+  25% {
+    opacity: 0.34;
+    transform: translateX(25vw) translateY(-12px) scale(0.88) rotate(4deg);
+  }
+  52% {
+    opacity: 0.24;
+    transform: translateX(62vw) translateY(18px) scale(0.76) rotate(-3deg);
+  }
+  74% {
+    opacity: 0.32;
+    transform: translateX(104vw) translateY(-10px) scale(0.92) rotate(5deg);
+  }
+  86%, 100% {
+    opacity: 0;
+    transform: translateX(122vw) translateY(14px) scale(0.66) rotate(-6deg);
+  }
+}
+
+/* Hide the older homepage-only popout layer so the new global background handles all pages */
+.hero-pop-bg .popout-character-layer {
+  display: none !important;
+}
+
+.cursor-spotlight {
+  position: fixed;
+  width: 520px;
+  height: 520px;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+  pointer-events: none;
+  opacity: 0;
+  border-radius: 50%;
+  background:
+    radial-gradient(circle, rgba(255, 87, 216, 0.22) 0%, rgba(46, 168, 255, 0.13) 28%, rgba(133, 72, 255, 0.07) 46%, transparent 70%);
+  mix-blend-mode: screen;
+  filter: blur(10px);
+  transition: opacity 0.25s ease;
+}
+
+.cursor-spotlight.is-active {
+  opacity: 1;
+}
+
+.navbar,
+.hero,
+.page-main,
+main,
+footer {
+  position: relative;
+  z-index: 2;
+}
+
+@media (hover: none), (max-width: 768px) {
+  .cursor-spotlight {
+    display: none;
+  }
+
+  .site-character-bg {
+    opacity: 0.46;
+  }
+
+  .site-float-char {
+    width: clamp(56px, 17vw, 92px) !important;
+  }
+}
