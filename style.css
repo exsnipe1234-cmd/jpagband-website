@@ -1913,3 +1913,46 @@ footer {
 .site-character-bg {
   opacity: 0.78 !important;
 }
+
+/* JPAG v39 - smooth transitions between internal pages */
+html {
+  scroll-behavior: smooth;
+}
+
+html.js body {
+  opacity: 0;
+  transform: translateY(8px) scale(0.995);
+  filter: blur(2px);
+  transition:
+    opacity 0.34s ease,
+    transform 0.34s ease,
+    filter 0.34s ease;
+}
+
+html.js body.page-ready {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+  filter: blur(0);
+}
+
+html.js body.page-leaving {
+  opacity: 0;
+  transform: translateY(-6px) scale(0.992);
+  filter: blur(3px);
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  html.js body,
+  html.js body.page-ready,
+  html.js body.page-leaving {
+    opacity: 1 !important;
+    transform: none !important;
+    filter: none !important;
+    transition: none !important;
+  }
+}
