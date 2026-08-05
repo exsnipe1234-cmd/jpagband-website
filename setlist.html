@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Build and send a suggested J.P.A.G Band setlist." />
+  <title>Build a Setlist | J.P.A.G Band</title>
+  <script>document.documentElement.classList.add('js');</script>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="site-character-bg" aria-hidden="true">
+    <span class="site-float-char site-float-jazz"></span>
+    <span class="site-float-char site-float-phoebe"></span>
+    <span class="site-float-char site-float-wero"></span>
+    <span class="site-float-char site-float-gerald"></span>
+  </div>
+  <div class="cursor-spotlight" aria-hidden="true"></div>
+
+  <nav class="navbar">
+    <a href="index.html#home" class="nav-brand">J.P.A.G</a>
+    <div class="nav-links">
+      <a href="index.html#home">Home</a>
+      <a href="biography.html">Biography</a>
+      <a href="setlist.html" aria-current="page">Setlist</a>
+      <a href="index.html#contact">Contact</a>
+    </div>
+    <div class="nav-actions">
+      <a href="https://www.instagram.com/jpagband/" target="_blank" class="nav-icon" aria-label="Instagram"><img src="instagram.svg" alt="" /></a>
+      <a href="https://www.tiktok.com/@jpagband" target="_blank" class="nav-icon" aria-label="TikTok"><img src="tiktok.svg" alt="" /></a>
+      <a href="https://wa.me/6591140321?text=Hi%20J.P.A.G%20Band,%20I%20would%20like%20to%20enquire%20about%20a%20performance%20booking." target="_blank" class="nav-book">Book J.P.A.G</a>
+    </div>
+  </nav>
+
+  <main class="page-main setlist-page">
+    <section class="page-hero compact-page-hero setlist-hero">
+      <p class="eyebrow">Your soundtrack</p>
+      <h1>Build Our Setlist</h1>
+      <p class="tagline">Search for songs, arrange the perfect flow, then send your picks to J.P.A.G.</p>
+    </section>
+
+    <section class="section setlist-section" aria-labelledby="setlist-heading">
+      <div class="setlist-intro">
+        <p class="section-label">Plan the vibe</p>
+        <h2 id="setlist-heading">Pick it. Place it. Play it.</h2>
+        <p class="body-text">Search the music catalogue, add songs to your list and drag them into your preferred order.</p>
+      </div>
+
+      <div class="setlist-workspace">
+        <div class="song-finder glass-panel">
+          <form id="song-search-form" class="song-search" role="search">
+            <label for="song-search">Find a song</label>
+            <div class="search-input-row">
+              <input id="song-search" name="song-search" type="search" placeholder="Try &quot;Dancing Queen&quot; or an artist" autocomplete="off" required />
+              <button class="setlist-button setlist-button-primary" type="submit">Search</button>
+            </div>
+          </form>
+          <p id="search-status" class="search-status" role="status" aria-live="polite">Search millions of tracks to get started.</p>
+          <div id="search-results" class="search-results" aria-live="polite"></div>
+
+          <form id="manual-song-form" class="manual-song-form">
+            <p class="manual-heading">Can't find it?</p>
+            <div class="manual-field">
+              <label for="manual-title">Song title</label>
+              <input id="manual-title" name="manual-title" type="text" placeholder="Song title" required />
+            </div>
+            <div class="manual-field">
+              <label for="manual-artist">Artist</label>
+              <input id="manual-artist" name="manual-artist" type="text" placeholder="Artist (optional)" />
+            </div>
+            <button class="setlist-button setlist-button-secondary" type="submit">Add a custom song</button>
+          </form>
+        </div>
+
+        <div class="setlist-builder glass-panel">
+          <div class="setlist-builder-head">
+            <div>
+              <p class="section-label">Your suggested set</p>
+              <h2>Setlist <span id="setlist-count">0 songs</span></h2>
+            </div>
+            <button id="clear-setlist" class="text-button" type="button" disabled>Clear all</button>
+          </div>
+          <p id="setlist-help" class="setlist-help">Drag search results here, then drag songs to reorder them. Arrow controls work too.</p>
+          <ol id="setlist-items" class="setlist-items" aria-describedby="setlist-help">
+            <li class="setlist-empty">Your selected songs will appear here.</li>
+          </ol>
+          <form id="send-setlist-form" class="send-setlist-form">
+            <div class="honeypot-field" aria-hidden="true">
+              <label for="setlist-website">Website</label>
+              <input id="setlist-website" name="website" type="text" tabindex="-1" autocomplete="off" />
+            </div>
+            <label for="setlist-name">Your name <span>(optional)</span></label>
+            <input id="setlist-name" name="setlist-name" type="text" placeholder="How should we address you?" />
+            <button id="send-setlist" class="setlist-button setlist-button-primary" type="submit" disabled>Email this setlist to J.P.A.G</button>
+            <p id="send-status" class="send-status" role="status" aria-live="polite"></p>
+            <div id="send-fallback" class="send-fallback" hidden>
+              <a id="open-gmail" href="https://mail.google.com/" target="_blank" rel="noopener">Open Gmail instead</a>
+              <button id="copy-setlist" type="button">Copy setlist</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <a class="floating-whatsapp" href="https://wa.me/6591140321?text=Hi%20J.P.A.G%20Band,%20I%20would%20like%20to%20enquire%20about%20a%20performance%20booking." target="_blank">WhatsApp</a>
+  <footer><p>&copy; 2026 J.P.A.G Band. All rights reserved.</p></footer>
+
+  <script>
+    (function () {
+      var spotlight = document.querySelector('.cursor-spotlight');
+      if (!spotlight || window.matchMedia('(hover: none)').matches) return;
+      var visible = false;
+      document.addEventListener('mousemove', function (event) {
+        spotlight.style.left = event.clientX + 'px';
+        spotlight.style.top = event.clientY + 'px';
+        if (!visible) { spotlight.classList.add('is-active'); visible = true; }
+      });
+      document.addEventListener('mouseleave', function () { spotlight.classList.remove('is-active'); visible = false; });
+    })();
+  </script>
+  <script src="setlist.js"></script>
+  <script src="page-transition.js"></script>
+</body>
+</html>
