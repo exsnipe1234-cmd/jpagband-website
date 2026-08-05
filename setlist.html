@@ -89,9 +89,9 @@
               <label for="setlist-website">Website</label>
               <input id="setlist-website" name="website" type="text" tabindex="-1" autocomplete="off" />
             </div>
-            <label for="event-type">Event type</label>
-            <select id="event-type" name="event-type" required>
-              <option value="" selected disabled>Select your event type</option>
+            <label for="event-type">Event type <span>(optional)</span></label>
+            <select id="event-type" name="event-type">
+              <option value="Not specified" selected>Select your event type</option>
               <option value="Wedding">Wedding</option>
               <option value="Corporate event">Corporate event</option>
               <option value="Birthday party">Birthday party</option>
@@ -102,7 +102,7 @@
             </select>
             <label for="setlist-name">Your name <span>(optional)</span></label>
             <input id="setlist-name" name="setlist-name" type="text" placeholder="How should we address you?" />
-            <button id="send-setlist" class="setlist-button setlist-button-primary" type="submit" disabled>Email this setlist to J.P.A.G</button>
+            <button id="send-setlist" class="setlist-button setlist-button-primary" type="submit" disabled>Email this setlist with Gmail</button>
             <p id="send-status" class="send-status" role="status" aria-live="polite"></p>
             <div id="send-fallback" class="send-fallback" hidden>
               <a id="open-gmail" href="https://mail.google.com/" target="_blank" rel="noopener">Open Gmail instead</a>

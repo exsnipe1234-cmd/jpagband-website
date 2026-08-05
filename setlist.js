@@ -211,8 +211,8 @@
     emailText = greeting + '\nEvent type: ' + eventType + '\n\n' + songs + '\n\nThank you!';
     openGmail.href = 'https://mail.google.com/mail/?view=cm&fs=1&to=thejpagband@gmail.com&su=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(emailText);
     sendFallback.hidden = false;
-    sendStatus.textContent = 'Opening your email app. If nothing appears, use an option below.';
-    window.location.href = 'mailto:thejpagband@gmail.com?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(emailText);
+    sendStatus.textContent = 'Opening Gmail in a new tab. If it does not appear, use an option below.';
+    window.open(openGmail.href, '_blank', 'noopener');
   });
 
   copySetlist.addEventListener('click', function () {
