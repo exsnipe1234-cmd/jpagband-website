@@ -2026,7 +2026,12 @@ html.js body.page-leaving {
 }
 
 .send-setlist-form select {
-  color-scheme: dark;
+  color-scheme: normal;
+}
+
+.send-setlist-form select option {
+  color: #151622;
+  background: #ffffff;
 }
 
 .song-search input:focus,
