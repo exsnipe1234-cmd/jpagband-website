@@ -204,10 +204,11 @@
       return;
     }
     var name = document.getElementById('setlist-name').value.trim();
+    var eventType = document.getElementById('event-type').value;
     var greeting = name ? 'Hi J.P.A.G,\n\nI am ' + name + ' and here is my suggested setlist:' : 'Hi J.P.A.G,\n\nHere is my suggested setlist:';
     var songs = setlist.map(function (song, index) { return (index + 1) + '. ' + song.title + (song.artist ? ' - ' + song.artist : ''); }).join('\n');
-    var subject = 'My J.P.A.G setlist suggestion';
-    emailText = greeting + '\n\n' + songs + '\n\nThank you!';
+    var subject = 'J.P.A.G setlist suggestion - ' + eventType;
+    emailText = greeting + '\nEvent type: ' + eventType + '\n\n' + songs + '\n\nThank you!';
     openGmail.href = 'https://mail.google.com/mail/?view=cm&fs=1&to=thejpagband@gmail.com&su=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(emailText);
     sendFallback.hidden = false;
     sendStatus.textContent = 'Opening your email app. If nothing appears, use an option below.';

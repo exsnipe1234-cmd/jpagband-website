@@ -2012,7 +2012,8 @@ html.js body.page-leaving {
 
 .song-search input,
 .manual-song-form input,
-.send-setlist-form input {
+.send-setlist-form input,
+.send-setlist-form select {
   width: 100%;
   min-width: 0;
   padding: 13px 15px;
@@ -2024,9 +2025,14 @@ html.js body.page-leaving {
   background: rgba(255, 255, 255, 0.06);
 }
 
+.send-setlist-form select {
+  color-scheme: dark;
+}
+
 .song-search input:focus,
 .manual-song-form input:focus,
-.send-setlist-form input:focus {
+.send-setlist-form input:focus,
+.send-setlist-form select:focus {
   border-color: #68cfff;
   box-shadow: 0 0 0 3px rgba(46, 168, 255, 0.18);
 }
