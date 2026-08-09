@@ -43,6 +43,12 @@
               <input id="song-duration" type="text" placeholder="Duration (3:45)" inputmode="numeric" />
               <input id="song-tempo" type="number" placeholder="BPM" min="1" max="400" />
             </div>
+            <select id="song-status" aria-label="Song status">
+              <option value="approved">Approved (green)</option>
+              <option value="yellow">Yellow review</option>
+              <option value="orange">Orange review</option>
+              <option value="unmarked">Unmarked</option>
+            </select>
             <input id="song-performer" type="text" placeholder="Performer (Jazz, Gerald, duet...)" />
             <textarea id="song-notes" placeholder="Notes, capo, cues..." rows="2"></textarea>
             <div class="form-actions"><button id="cancel-song" class="text-button">Cancel</button><button id="save-song" class="primary-button">Add song</button></div>
@@ -58,6 +64,8 @@
           <div class="search-wrap"><input id="library-search" type="search" placeholder="Filter saved library" /></div>
           <div class="library-filters" aria-label="Song library filters">
             <button id="show-approved" class="filter-button is-active" aria-pressed="true">Approved <span id="approved-count"></span></button>
+            <button id="show-yellow" class="filter-button filter-yellow" aria-pressed="false">Yellow Review <span id="yellow-count"></span></button>
+            <button id="show-orange" class="filter-button filter-orange" aria-pressed="false">Orange Review <span id="orange-count"></span></button>
             <button id="show-all" class="filter-button" aria-pressed="false">All songs</button>
             <button id="show-missing-duration" class="filter-button" aria-pressed="false">Needs duration <span id="missing-duration-count"></span></button>
           </div>
@@ -98,7 +106,7 @@
         <div class="song-artwork"><img alt="" hidden /><span aria-hidden="true">NOTE</span></div>
         <button class="add-song" title="Add to setlist" aria-label="Add to setlist">+</button>
         <div class="song-info"><h3></h3><p class="artist"></p><div class="song-meta"></div><button class="duration-button" hidden>Add duration</button></div>
-        <div class="song-card-actions"><button class="approve-song" title="Move to approved songs" hidden>Approve</button><button class="review-yellow" title="Mark for yellow review" hidden>Yellow</button><button class="review-orange" title="Mark for orange review" hidden>Orange</button><button class="edit-song" title="Edit song" aria-label="Edit song">Edit</button><button class="delete-song" title="Delete song" aria-label="Delete song">x</button></div>
+        <div class="song-card-actions"><button class="edit-song" title="Edit song" aria-label="Edit song">Edit</button><button class="delete-song" title="Delete song" aria-label="Delete song">x</button></div>
       </article>
     </template>
     <script src="band-songs-data.js"></script>

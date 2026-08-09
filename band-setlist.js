@@ -73,15 +73,19 @@ function render() {
   const library = $('song-library');
   library.innerHTML = '';
   const approvedSongs = state.songs.filter(song => song.approved !== false);
+  const yellowSongs = state.songs.filter(song => song.status === 'yellow');
+  const orangeSongs = state.songs.filter(song => song.status === 'orange');
   const missingDurationSongs = state.songs.filter(song => !song.duration);
   const visibleSongs = state.songs.filter(song => {
     const matchesSearch = `${song.title} ${song.artist} ${song.key} ${song.performer || ''}`.toLowerCase().includes(filter);
-    const matchesView = libraryView === 'approved' ? song.approved !== false : libraryView === 'missing-duration' ? !song.duration : true;
+    const matchesView = libraryView === 'approved' ? song.approved !== false : libraryView === 'yellow' ? song.status === 'yellow' : libraryView === 'orange' ? song.status === 'orange' : libraryView === 'missing-duration' ? !song.duration : true;
     return matchesSearch && matchesView;
   });
   $('approved-count').textContent = approvedSongs.length;
+  $('yellow-count').textContent = yellowSongs.length;
+  $('orange-count').textContent = orangeSongs.length;
   $('missing-duration-count').textContent = missingDurationSongs.length;
-  ['approved', 'all', 'missing-duration'].forEach(view => {
+  ['approved', 'yellow', 'orange', 'all', 'missing-duration'].forEach(view => {
     const button = $(`show-${view}`);
     const active = libraryView === view;
     button.classList.toggle('is-active', active);
@@ -102,15 +106,6 @@ function render() {
     if (song.approved !== false) { const tag = document.createElement('span'); tag.className = 'approved-tag'; tag.textContent = 'APPROVED'; meta.append(tag); }
     if (song.status === 'yellow' || song.status === 'orange') { const tag = document.createElement('span'); tag.className = `${song.status}-tag`; tag.textContent = `${song.status.toUpperCase()} REVIEW`; meta.append(tag); }
     card.querySelector('.add-song').onclick = () => { state.setlist.push({ type: 'song', songId: song.id }); save(); render(); };
-    const approveButton = card.querySelector('.approve-song');
-    if (song.approved === false) approveButton.hidden = false;
-    approveButton.onclick = () => { song.approved = true; song.status = 'approved'; save(); render(); };
-    const yellowButton = card.querySelector('.review-yellow');
-    const orangeButton = card.querySelector('.review-orange');
-    if (libraryView === 'all' && song.status !== 'yellow') yellowButton.hidden = false;
-    if (libraryView === 'all' && song.status !== 'orange') orangeButton.hidden = false;
-    yellowButton.onclick = () => { song.approved = false; song.status = 'yellow'; save(); render(); };
-    orangeButton.onclick = () => { song.approved = false; song.status = 'orange'; save(); render(); };
     card.querySelector('.edit-song').onclick = () => editSong(song);
     card.querySelector('.delete-song').onclick = () => { if (confirm(`Delete "${song.title}" from your library?`)) { state.songs = state.songs.filter(item => item.id !== song.id); state.setlist = state.setlist.filter(item => item.songId !== song.id); save(); render(); } };
     const durationButton = card.querySelector('.duration-button');
@@ -164,6 +159,7 @@ function removeItem(index) { state.setlist.splice(index, 1); save(); render(); }
 function resetSongForm() {
   editingSongId = null;
   ['song-title','song-artist','song-key','song-duration','song-tempo','song-performer','song-notes'].forEach(id => { $(id).value = ''; });
+  $('song-status').value = 'approved';
   $('save-song').textContent = 'Add song';
 }
 function editSong(song) {
@@ -173,6 +169,7 @@ function editSong(song) {
   $('song-key').value = song.key || '';
   $('song-duration').value = song.duration || '';
   $('song-tempo').value = song.tempo || '';
+  $('song-status').value = song.status || (song.approved === false ? 'unmarked' : 'approved');
   $('song-performer').value = song.performer || '';
   $('song-notes').value = song.notes || '';
   $('save-song').textContent = 'Save changes';
@@ -245,10 +242,11 @@ $('save-song').onclick = () => {
   const title = $('song-title').value.trim(); if (!title) { $('song-title').focus(); return; }
   const duration = $('song-duration').value.trim();
   if (duration && !/^\d+:\d{1,2}$/.test(duration)) { alert('Use minutes:seconds for duration, for example 3:45.'); return; }
-  const details = { title, artist: $('song-artist').value.trim(), key: $('song-key').value.trim(), duration, tempo: $('song-tempo').value, performer: $('song-performer').value.trim(), notes: $('song-notes').value.trim() };
+  const status = $('song-status').value;
+  const details = { title, artist: $('song-artist').value.trim(), key: $('song-key').value.trim(), duration, tempo: $('song-tempo').value, performer: $('song-performer').value.trim(), notes: $('song-notes').value.trim(), status, approved: status === 'approved' };
   const editingSong = state.songs.find(song => song.id === editingSongId);
   if (editingSong) Object.assign(editingSong, details);
-  else state.songs.push({ id: Date.now(), ...details, approved: true });
+  else state.songs.push({ id: Date.now(), ...details });
   resetSongForm(); $('song-form').hidden = true; save(); render();
 };
 $('library-search').oninput = render;
@@ -264,7 +262,7 @@ $('catalogue-search-form').onsubmit = event => {
     .catch(() => { $('catalogue-status').textContent = 'Online search is unavailable. Your saved library still works offline.'; });
 };
 $('auto-artwork').onclick = addApprovedArtwork;
-['approved', 'all', 'missing-duration'].forEach(view => { $(`show-${view}`).onclick = () => { libraryView = view; render(); }; });
+['approved', 'yellow', 'orange', 'all', 'missing-duration'].forEach(view => { $(`show-${view}`).onclick = () => { libraryView = view; render(); }; });
 ['show-name','show-date','target-minutes'].forEach(id => $(id).oninput = () => { save(); render(); });
 $('add-break').onclick = () => { state.setlist.push({ type: 'break' }); save(); render(); };
 $('clear-setlist').onclick = () => { if (state.setlist.length && confirm('Clear every song from this setlist? Your library will remain.')) { state.setlist = []; save(); render(); } };
