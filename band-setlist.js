@@ -105,6 +105,12 @@ function render() {
     const approveButton = card.querySelector('.approve-song');
     if (song.approved === false) approveButton.hidden = false;
     approveButton.onclick = () => { song.approved = true; song.status = 'approved'; save(); render(); };
+    const yellowButton = card.querySelector('.review-yellow');
+    const orangeButton = card.querySelector('.review-orange');
+    if (libraryView === 'all' && song.status !== 'yellow') yellowButton.hidden = false;
+    if (libraryView === 'all' && song.status !== 'orange') orangeButton.hidden = false;
+    yellowButton.onclick = () => { song.approved = false; song.status = 'yellow'; save(); render(); };
+    orangeButton.onclick = () => { song.approved = false; song.status = 'orange'; save(); render(); };
     card.querySelector('.edit-song').onclick = () => editSong(song);
     card.querySelector('.delete-song').onclick = () => { if (confirm(`Delete "${song.title}" from your library?`)) { state.songs = state.songs.filter(item => item.id !== song.id); state.setlist = state.setlist.filter(item => item.songId !== song.id); save(); render(); } };
     const durationButton = card.querySelector('.duration-button');
