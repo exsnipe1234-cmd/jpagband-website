@@ -1,7 +1,7 @@
 const storageKey = 'jpag-private-band-setlist-v1';
 const catalogRevisionKey = 'jpag-private-band-catalog-revision';
 const artworkStorageKey = 'jpag-private-band-artwork-v1';
-const catalogRevision = 'song-key-artist-v1';
+const catalogRevision = 'song-key-artist-status-v1';
 const $ = (id) => document.getElementById(id);
 const songIdentity = (song) => song.title.toLowerCase().replace(/[^a-z0-9]/g, '');
 
@@ -100,7 +100,11 @@ function render() {
     const meta = card.querySelector('.song-meta');
     [song.key, song.duration, song.tempo && `${song.tempo} BPM`, song.performer].filter(Boolean).forEach(value => { const tag = document.createElement('span'); tag.textContent = value; meta.append(tag); });
     if (song.approved !== false) { const tag = document.createElement('span'); tag.className = 'approved-tag'; tag.textContent = 'APPROVED'; meta.append(tag); }
+    if (song.status === 'yellow' || song.status === 'orange') { const tag = document.createElement('span'); tag.className = `${song.status}-tag`; tag.textContent = `${song.status.toUpperCase()} REVIEW`; meta.append(tag); }
     card.querySelector('.add-song').onclick = () => { state.setlist.push({ type: 'song', songId: song.id }); save(); render(); };
+    const approveButton = card.querySelector('.approve-song');
+    if (song.approved === false) approveButton.hidden = false;
+    approveButton.onclick = () => { song.approved = true; song.status = 'approved'; save(); render(); };
     card.querySelector('.edit-song').onclick = () => editSong(song);
     card.querySelector('.delete-song').onclick = () => { if (confirm(`Delete "${song.title}" from your library?`)) { state.songs = state.songs.filter(item => item.id !== song.id); state.setlist = state.setlist.filter(item => item.songId !== song.id); save(); render(); } };
     const durationButton = card.querySelector('.duration-button');
