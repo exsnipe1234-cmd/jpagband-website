@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#11120f" />
+    <title>Private Band Setlist Builder</title>
+    <link rel="stylesheet" href="band-setlist.css" />
+  </head>
+  <body>
+    <main class="app-shell">
+      <header class="topbar">
+        <div>
+          <p class="eyebrow">J.P.A.G BAND · PRIVATE SHOW PLANNER</p>
+          <h1>Private Band Setlist Builder</h1>
+        </div>
+        <div class="show-details">
+          <label>Show name <input id="show-name" type="text" placeholder="Friday night at The Hall" /></label>
+          <label>Date <input id="show-date" type="date" /></label>
+          <label>Target minutes <input id="target-minutes" type="number" min="1" max="600" placeholder="60" /></label>
+        </div>
+      </header>
+
+      <section class="stats" aria-label="Setlist summary">
+        <div><span id="song-count">0</span><small>SONGS</small></div>
+        <div><span id="total-time">0:00</span><small>EST. TIME</small></div>
+        <div><span id="time-remaining">--</span><small id="time-remaining-label">TIME LEFT</small></div>
+      </section>
+
+      <div class="workspace">
+        <aside class="library-panel">
+          <div class="panel-heading">
+            <div><p class="eyebrow">YOUR CATALOG</p><h2>Song library</h2></div>
+            <button id="open-song-form" class="circle-button" title="Add a song" aria-label="Add a song">+</button>
+          </div>
+          <div id="song-form" class="song-form" hidden>
+            <input id="song-title" type="text" placeholder="Song title *" />
+            <div class="form-row">
+              <input id="song-artist" type="text" placeholder="Artist" />
+              <input id="song-key" type="text" placeholder="Key" maxlength="4" />
+            </div>
+            <div class="form-row">
+              <input id="song-duration" type="text" placeholder="Duration (3:45)" inputmode="numeric" />
+              <input id="song-tempo" type="number" placeholder="BPM" min="1" max="400" />
+            </div>
+            <input id="song-performer" type="text" placeholder="Performer (Jazz, Gerald, duet...)" />
+            <textarea id="song-notes" placeholder="Notes, capo, cues..." rows="2"></textarea>
+            <div class="form-actions"><button id="cancel-song" class="text-button">Cancel</button><button id="save-song" class="primary-button">Add song</button></div>
+          </div>
+          <form id="catalogue-search-form" class="catalogue-search" role="search">
+            <label for="catalogue-search">Find a song online</label>
+            <div><input id="catalogue-search" type="search" placeholder="Dancing Queen or ABBA" autocomplete="off" /><button class="primary-button" type="submit">Search</button></div>
+          </form>
+          <p id="catalogue-status" class="catalogue-status" aria-live="polite">Search the music catalogue for artwork and songs.</p>
+          <button id="auto-artwork" class="secondary-button auto-artwork-button" type="button">Auto-add approved covers</button>
+          <p id="artwork-status" class="catalogue-status" aria-live="polite"></p>
+          <div id="catalogue-results" class="catalogue-results" aria-live="polite"></div>
+          <div class="search-wrap"><input id="library-search" type="search" placeholder="Filter saved library" /></div>
+          <div class="library-filters" aria-label="Song library filters">
+            <button id="show-approved" class="filter-button is-active" aria-pressed="true">Approved <span id="approved-count"></span></button>
+            <button id="show-all" class="filter-button" aria-pressed="false">All songs</button>
+            <button id="show-missing-duration" class="filter-button" aria-pressed="false">Needs duration <span id="missing-duration-count"></span></button>
+          </div>
+          <div id="song-library" class="song-library" aria-live="polite"></div>
+        </aside>
+
+        <section class="setlist-panel">
+          <div class="panel-heading setlist-heading">
+            <div><p class="eyebrow">RUN OF SHOW</p><h2 id="setlist-title">Untitled set</h2></div>
+            <div class="heading-actions">
+              <button id="add-break" class="secondary-button">+ Set break</button>
+              <button id="export-setlist" class="secondary-button">Export</button>
+            </div>
+          </div>
+          <p class="instruction">Add songs from your library, then use the arrows to dial in the flow.</p>
+          <div class="template-bar" aria-label="Show templates">
+            <span>Start from</span>
+            <button class="template-button" data-template="busking">Busking 60</button>
+            <button class="template-button" data-template="wedding">Wedding 90</button>
+            <button class="template-button" data-template="bar">Bar 120</button>
+            <button class="template-button" data-template="mall">Mall 45</button>
+          </div>
+          <ol id="setlist" class="setlist" aria-live="polite"></ol>
+          <div id="empty-setlist" class="empty-setlist">
+            <div class="empty-mark">+</div>
+            <h3>Your stage is clear</h3>
+            <p>Add a song from the library to start building your show.</p>
+          </div>
+          <footer class="setlist-footer">
+            <button id="clear-setlist" class="danger-button">Clear setlist</button>
+            <p id="autosave-status">Saved locally</p>
+          </footer>
+        </section>
+      </div>
+    </main>
+    <template id="song-card-template">
+      <article class="song-card">
+        <div class="song-artwork"><img alt="" hidden /><span aria-hidden="true">NOTE</span></div>
+        <button class="add-song" title="Add to setlist" aria-label="Add to setlist">+</button>
+        <div class="song-info"><h3></h3><p class="artist"></p><div class="song-meta"></div><button class="duration-button" hidden>Add duration</button></div>
+        <div class="song-card-actions"><button class="edit-song" title="Edit song" aria-label="Edit song">Edit</button><button class="delete-song" title="Delete song" aria-label="Delete song">x</button></div>
+      </article>
+    </template>
+    <script src="band-songs-data.js"></script>
+    <script src="band-setlist.js"></script>
+  </body>
+</html>
