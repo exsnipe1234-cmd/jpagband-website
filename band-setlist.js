@@ -1,5 +1,6 @@
 const storageKey = 'jpag-private-band-setlist-v1';
 const catalogRevisionKey = 'jpag-private-band-catalog-revision';
+const artworkStorageKey = 'jpag-private-band-artwork-v1';
 const catalogRevision = 'song-key-artist-v1';
 const $ = (id) => document.getElementById(id);
 const songIdentity = (song) => song.title.toLowerCase().replace(/[^a-z0-9]/g, '');
@@ -44,11 +45,17 @@ if (savedState) {
   localStorage.setItem(storageKey, JSON.stringify(state));
 }
 
+const savedArtwork = JSON.parse(localStorage.getItem(artworkStorageKey)) || {};
+state.songs.forEach(song => {
+  if (savedArtwork[songIdentity(song)]) song.artwork = savedArtwork[songIdentity(song)];
+});
+
 function save() {
   state.showName = $('show-name').value;
   state.showDate = $('show-date').value;
   state.targetMinutes = $('target-minutes').value;
   localStorage.setItem(storageKey, JSON.stringify(state));
+  localStorage.setItem(artworkStorageKey, JSON.stringify(Object.fromEntries(state.songs.filter(song => song.artwork).map(song => [songIdentity(song), song.artwork]))));
   $('autosave-status').textContent = 'Saved locally';
 }
 
