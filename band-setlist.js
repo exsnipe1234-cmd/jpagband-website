@@ -135,11 +135,11 @@ function render() {
     const song = state.songs.find(entry => entry.id === item.songId); if (!song) return;
     number++; duration += seconds(song.duration);
     const row = document.createElement('li'); row.className = 'set-item';
-    row.innerHTML = `<span class="track-number">${String(number).padStart(2, '0')}</span><div><h3></h3><p></p><div class="item-tags"></div>${song.notes ? '<p class="set-notes"></p>' : ''}</div><div class="item-actions"><span class="drag-handle" title="Drag to reorder">DRAG</span><button class="up" title="Move up">&#8593;</button><button class="down" title="Move down">&#8595;</button><button class="remove" title="Remove">x</button></div>`;
+    row.innerHTML = `<span class="track-number">${String(number).padStart(2, '0')}</span><div><h3></h3><p></p><div class="item-tags"></div>${song.notes ? '<p class="set-notes"></p>' : ''}</div><div class="item-actions"><button class="move-top" title="Move to first song">TOP</button><span class="drag-handle" title="Drag to reorder">DRAG</span><button class="up" title="Move up">&#8593;</button><button class="down" title="Move down">&#8595;</button><button class="remove" title="Remove">x</button></div>`;
     row.querySelector('h3').textContent = song.title; row.querySelector('p').textContent = song.performer || song.artist || 'Original';
     [song.key, song.duration, song.tempo && `${song.tempo} BPM`, song.performer].filter(Boolean).forEach(value => { const tag = document.createElement('span'); tag.textContent = value; row.querySelector('.item-tags').append(tag); });
     if (song.notes) row.querySelector('.set-notes').textContent = song.notes;
-    row.querySelector('.up').onclick = () => moveItem(index, -1); row.querySelector('.down').onclick = () => moveItem(index, 1); row.querySelector('.remove').onclick = () => removeItem(index); enableDrag(row, index); list.append(row);
+    row.querySelector('.move-top').onclick = () => moveToTop(index); row.querySelector('.up').onclick = () => moveItem(index, -1); row.querySelector('.down').onclick = () => moveItem(index, 1); row.querySelector('.remove').onclick = () => removeItem(index); enableDrag(row, index); list.append(row);
   });
   $('empty-setlist').hidden = state.setlist.length > 0;
   const targetSeconds = Number(state.targetMinutes || 0) * 60;
@@ -154,6 +154,10 @@ function render() {
 function moveItem(index, direction) {
   const target = index + direction; if (target < 0 || target >= state.setlist.length) return;
   [state.setlist[index], state.setlist[target]] = [state.setlist[target], state.setlist[index]]; save(); render();
+}
+function moveToTop(index) {
+  if (index === 0) return;
+  state.setlist.unshift(state.setlist.splice(index, 1)[0]); save(); render();
 }
 function removeItem(index) { state.setlist.splice(index, 1); save(); render(); }
 function resetSongForm() {
