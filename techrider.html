@@ -12,60 +12,56 @@
     <main class="rider-page">
       <header class="rider-hero">
         <p class="eyebrow">J.P.A.G BAND · PRIVATE DOCUMENT</p>
-        <h1>JPAG Technical Rider</h1>
-        <p>Please provide the following equipment for a smooth performance.</p>
+        <h1>Technical Rider</h1>
+        <h2>4-Piece Live Band · Vocal / Guitar / Keyboard / Electronic Percussion</h2>
+        <p>Please provide the following equipment and stage support for a smooth performance.</p>
       </header>
 
-      <section class="rider-toolbar" aria-label="Document controls">
-        <p>Technical requirements</p>
-        <button id="print-rider" class="rider-button" type="button">Print rider</button>
+      <section class="rider-panel configuration">
+        <h3><span>1)</span> Band Configuration</h3>
+        <div class="member-row">
+          <div class="member"><span class="member-icon mic-icon"></span><strong>Lead Vocal</strong></div>
+          <div class="member"><span class="member-icon guitar-icon"></span><strong>Guitar</strong></div>
+          <div class="member"><span class="member-icon keys-icon"></span><strong>Keyboard</strong></div>
+          <div class="member"><span class="member-icon spd-icon"></span><strong>SPD / Electronic Percussion</strong></div>
+        </div>
       </section>
 
-      <section class="rider-grid" aria-label="JPAG technical requirements">
-        <article class="rider-card">
-          <p class="section-label">01 · Vocals</p>
-          <ul>
-            <li>Shure SM58 or Beta 58A microphone x1</li>
-            <li>XLR cable x1</li>
-            <li>Microphone stand x1</li>
-            <li>Music stand x1</li>
+      <div class="rider-layout">
+        <section class="rider-panel patch-panel">
+          <h3><span>2)</span> Input / Patch List</h3>
+          <div class="table-wrap"><table><thead><tr><th>Ch</th><th>Source</th><th>Connection</th><th>Notes</th></tr></thead><tbody>
+            <tr><td>1</td><td>Lead Vocal</td><td>XLR</td><td>Shure SM58 or Beta 58A</td></tr>
+            <tr><td>2</td><td>SPD Output</td><td>1/4-inch</td><td>Instrument cable</td></tr>
+            <tr><td>3</td><td>SPD Vocal</td><td>XLR</td><td>Shure SM58</td></tr>
+            <tr><td>4</td><td>Keyboard</td><td>1/4-inch</td><td>Instrument cable</td></tr>
+            <tr><td>5</td><td>Keyboard Vocal</td><td>XLR</td><td>Shure SM58</td></tr>
+            <tr><td>6</td><td>Guitar</td><td>DI / 1/4-inch</td><td>DI box and 2 instrument cables</td></tr>
+          </tbody></table></div>
+        </section>
+        <section class="rider-panel venue-panel">
+          <h3><span>3)</span> Venue / AV To Provide</h3>
+          <ul class="check-list">
+            <li>Front of House (FOH) PA speakers, if available</li>
+            <li>3 vocal microphones: Shure SM58 or Beta 58A</li>
+            <li>3 microphone stands</li>
+            <li>2 music stands</li>
+            <li>1 keyboard stand</li>
+            <li>1 guitar stand</li>
+            <li>1 DI box</li>
+            <li>XLR and 1/4-inch cables as listed</li>
           </ul>
-        </article>
-        <article class="rider-card">
-          <p class="section-label">02 · SPD / Electronic Percussion</p>
-          <ul>
-            <li>1/4-inch instrument cable x1</li>
-            <li>Shure SM58 microphone x1</li>
-            <li>Microphone stand x1</li>
-            <li>Music stand x1</li>
-          </ul>
-        </article>
-        <article class="rider-card">
-          <p class="section-label">03 · Keyboard</p>
-          <ul>
-            <li>Shure SM58 microphone x1</li>
-            <li>Microphone stand x1</li>
-            <li>Keyboard stand x1</li>
-            <li>1/4-inch instrument cable x1</li>
-          </ul>
-        </article>
-        <article class="rider-card">
-          <p class="section-label">04 · Guitar</p>
-          <ul>
-            <li>DI box x1</li>
-            <li>Guitar stand x1</li>
-            <li>1/4-inch instrument cables x2</li>
-          </ul>
-        </article>
-        <article class="rider-card">
-          <p class="section-label">05 · Monitoring Requirements</p>
-          <ul><li>Floor monitors x2</li></ul>
-        </article>
-        <article class="rider-card">
-          <p class="section-label">06 · PA System</p>
-          <ul><li>Front of House (FOH) PA speakers, if available</li></ul>
-        </article>
-      </section>
+        </section>
+        <section class="rider-panel monitoring-panel">
+          <h3><span>4)</span> Monitoring</h3>
+          <ul class="check-list"><li>Floor monitors x2</li></ul>
+        </section>
+        <section class="rider-panel stage-panel">
+          <h3><span>5)</span> Stage Plot</h3>
+          <div class="stage"><span class="stage-back">BACK</span><div class="stage-line top"></div><div class="stage-line bottom"></div><div class="stage-member guitar">Guitar<small>DI</small></div><div class="stage-member spd">SPD<small>1/4-inch</small></div><div class="stage-member keyboard">Keyboard<small>1/4-inch</small></div><div class="stage-member vocal">Lead Vocal<small>Mic</small></div><div class="monitor left">Monitor 1</div><div class="monitor right">Monitor 2</div><span class="stage-front">FRONT / AUDIENCE</span></div>
+        </section>
+      </div>
+      <footer class="rider-note"><span>i</span>Please contact the band in advance for any technical limitations or substitutions.<button id="print-rider" type="button">Print rider</button></footer>
     </main>
     <script>document.getElementById('print-rider').addEventListener('click', () => window.print());</script>
   </body>
