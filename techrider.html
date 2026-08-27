@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="noindex, nofollow" />
+    <title>Private Tech Rider | J.P.A.G Band</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="techrider.css" />
+  </head>
+  <body>
+    <main class="rider-page">
+      <header class="rider-hero">
+        <p class="eyebrow">J.P.A.G BAND · PRIVATE DOCUMENT</p>
+        <h1>Technical Rider</h1>
+        <p>Keep your show requirements organised, current, and ready to share.</p>
+      </header>
+
+      <section class="rider-toolbar" aria-label="Document controls">
+        <p id="save-status">Saved locally</p>
+        <button id="print-rider" class="rider-button" type="button">Print rider</button>
+      </section>
+
+      <form id="rider-form" class="rider-grid">
+        <section class="rider-card rider-card-wide">
+          <p class="section-label">Overview</p>
+          <label>Document title<input id="rider-title" type="text" placeholder="J.P.A.G Band Technical Rider" /></label>
+          <label>Performance summary<textarea id="rider-summary" rows="4" placeholder="Describe the performance format, band size, and any important context for the venue."></textarea></label>
+        </section>
+        <section class="rider-card">
+          <p class="section-label">Stage</p>
+          <label>Stage and power<textarea id="rider-stage" rows="8" placeholder="Stage size, layout, power points, seating, lighting, and access requirements."></textarea></label>
+        </section>
+        <section class="rider-card">
+          <p class="section-label">Audio</p>
+          <label>Inputs and backline<textarea id="rider-audio" rows="8" placeholder="Instruments, DI boxes, microphones, stands, PA, mixer, and backline requirements."></textarea></label>
+        </section>
+        <section class="rider-card">
+          <p class="section-label">Monitoring</p>
+          <label>Monitor requirements<textarea id="rider-monitors" rows="7" placeholder="Number of monitor mixes, IEMs, wedges, and any musician-specific notes."></textarea></label>
+        </section>
+        <section class="rider-card">
+          <p class="section-label">Schedule</p>
+          <label>Load-in and soundcheck<textarea id="rider-schedule" rows="7" placeholder="Arrival time, setup duration, soundcheck requirements, and performance schedule."></textarea></label>
+        </section>
+        <section class="rider-card rider-card-wide">
+          <p class="section-label">Contact</p>
+          <label>Technical contact<textarea id="rider-contact" rows="3" placeholder="Name, phone number, email, and preferred contact method."></textarea></label>
+        </section>
+      </form>
+    </main>
+    <script src="techrider.js"></script>
+  </body>
+</html>
