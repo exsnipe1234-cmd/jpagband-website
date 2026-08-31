@@ -6,7 +6,7 @@
   <meta name="description" content="Gallery page for J.P.A.G Band." />
   <title>Gallery | J.P.A.G Band</title>
   <script>document.documentElement.classList.add('js');</script>
-  <link rel="stylesheet" href="style.css?v=49" />
+  <link rel="stylesheet" href="style.css?v=50" />
 </head>
 <body class="inner-redesign">
   <div class="site-character-bg" aria-hidden="true">
@@ -27,11 +27,32 @@
     </section>
 
     <section class="section inner-section gallery-section">
-      <div class="media-grid">
-        <figure class="gallery-photo gallery-photo-wide"><img src="gallery-1.jpg" alt="J.P.A.G Band with guests at an event" /></figure>
-        <figure class="gallery-photo"><img src="gallery-2.jpg" alt="J.P.A.G Band busking performance" /></figure>
-        <figure class="gallery-photo gallery-photo-portrait"><img src="gallery-3.jpg" alt="J.P.A.G Band members before a performance" /></figure>
-        <figure class="gallery-photo gallery-photo-wide"><img src="gallery-4.jpg" alt="J.P.A.G Band at a live event" /></figure>
+      <p class="gallery-intro">Hover over a card to reveal the story. On mobile, tap a card to flip it.</p>
+      <div class="flip-gallery">
+        <button class="gallery-flip-card" type="button" aria-pressed="false">
+          <span class="gallery-flip-inner">
+            <span class="gallery-flip-face gallery-flip-front"><img src="gallery-1.jpg" alt="J.P.A.G Band with guests at an event" /><span class="gallery-flip-label">With the crowd</span><span class="gallery-flip-prompt">Flip to explore</span></span>
+            <span class="gallery-flip-face gallery-flip-back"><span class="gallery-card-number">01</span><strong>Every room has a rhythm.</strong><span>Live moments are built around the people in front of us.</span></span>
+          </span>
+        </button>
+        <button class="gallery-flip-card" type="button" aria-pressed="false">
+          <span class="gallery-flip-inner">
+            <span class="gallery-flip-face gallery-flip-front"><img src="gallery-2.jpg" alt="J.P.A.G Band busking performance" /><span class="gallery-flip-label">Busking sessions</span><span class="gallery-flip-prompt">Flip to explore</span></span>
+            <span class="gallery-flip-face gallery-flip-back"><span class="gallery-card-number">02</span><strong>Music out in the city.</strong><span>Busking brings us close to the crowd, one song at a time.</span></span>
+          </span>
+        </button>
+        <button class="gallery-flip-card" type="button" aria-pressed="false">
+          <span class="gallery-flip-inner">
+            <span class="gallery-flip-face gallery-flip-front"><img src="gallery-3.jpg" alt="J.P.A.G Band members before a performance" /><span class="gallery-flip-label">Behind the scenes</span><span class="gallery-flip-prompt">Flip to explore</span></span>
+            <span class="gallery-flip-face gallery-flip-back"><span class="gallery-card-number">03</span><strong>Before the first note.</strong><span>The energy starts long before we step onto the stage.</span></span>
+          </span>
+        </button>
+        <button class="gallery-flip-card" type="button" aria-pressed="false">
+          <span class="gallery-flip-inner">
+            <span class="gallery-flip-face gallery-flip-front"><img src="gallery-4.jpg" alt="J.P.A.G Band at a live event" /><span class="gallery-flip-label">Celebration nights</span><span class="gallery-flip-prompt">Flip to explore</span></span>
+            <span class="gallery-flip-face gallery-flip-back"><span class="gallery-card-number">04</span><strong>Made for the moment.</strong><span>From intimate gatherings to big celebrations, we bring the soundtrack.</span></span>
+          </span>
+        </button>
       </div>
     </section>
   </main>
@@ -64,6 +85,7 @@
     })();
   </script>
 
+  <script src="gallery-flip.js"></script>
   <script src="page-transition.js"></script>
 </body>
 </html>
