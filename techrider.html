@@ -8,61 +8,284 @@
     <link rel="stylesheet" href="style.css" />
     <link rel="stylesheet" href="techrider.css" />
   </head>
-  <body>
-    <main class="rider-page">
+  <body class="inner-redesign">
+    <!-- Navigation -->
+    <nav class="inner-nav">
+      <a class="inner-brand" href="/">
+        <img src="Jazz.png" alt="JPAG" />
+        <span><strong>JPAG</strong><small>Live Band</small></span>
+      </a>
+      <div class="inner-links">
+        <a href="/">Home</a>
+        <a href="/biography.html">Biography</a>
+        <a href="/gallery.html">Gallery</a>
+        <a href="/setlist.html">Setlist</a>
+        <a href="/contact.html">Contact</a>
+        <a class="is-current" href="/techrider.html">Tech Rider</a>
+      </div>
+      <a class="inner-book" href="/contact.html">Book Us</a>
+    </nav>
+
+    <main class="inner-main">
+      <!-- Hero -->
       <header class="rider-hero">
-        <p class="eyebrow">J.P.A.G BAND · PRIVATE DOCUMENT</p>
+        <p class="rider-eyebrow">J.P.A.G BAND &middot; PRIVATE DOCUMENT</p>
         <h1>Technical Rider</h1>
-        <h2>4-Piece Live Band · Vocal / Guitar / Keyboard / Electronic Percussion</h2>
-        <p>Please provide the following equipment and stage support for a smooth performance.</p>
+        <p class="rider-subtitle">4-Piece Live Band &middot; Vocal / Keyboard / Guitar / Electronic Percussion</p>
       </header>
 
-      <section class="rider-panel configuration">
-        <h3><span>1)</span> Band Configuration</h3>
-        <div class="member-row">
-          <div class="member"><span class="member-icon mic-icon"></span><strong>Lead Vocal</strong></div>
-          <div class="member"><span class="member-icon guitar-icon"></span><strong>Guitar</strong></div>
-          <div class="member"><span class="member-icon keys-icon"></span><strong>Keyboard</strong></div>
-          <div class="member"><span class="member-icon spd-icon"></span><strong>SPD / Electronic Percussion</strong></div>
-        </div>
-      </section>
+      <div class="rider-container">
 
-      <div class="rider-layout">
+        <!-- 1. Quick Reference Card -->
+        <section class="rider-panel quick-ref">
+          <h3><span>1)</span> Quick Reference</h3>
+          <div class="quick-grid">
+            <div class="quick-stat">
+              <span class="quick-num">6</span>
+              <span class="quick-label">Channels</span>
+            </div>
+            <div class="quick-stat">
+              <span class="quick-num">3</span>
+              <span class="quick-label">Vocal Mics</span>
+            </div>
+            <div class="quick-stat">
+              <span class="quick-num">3</span>
+              <span class="quick-label">Instruments</span>
+            </div>
+            <div class="quick-stat">
+              <span class="quick-num">2</span>
+              <span class="quick-label">Monitors</span>
+            </div>
+            <div class="quick-stat">
+              <span class="quick-num">2</span>
+              <span class="quick-label">Power Circuits</span>
+            </div>
+          </div>
+        </section>
+
+        <!-- 2. Total Equipment Checklist -->
+        <section class="rider-panel checklist-panel">
+          <h3><span>2)</span> Total Equipment Checklist</h3>
+          <div class="checklist-grid">
+            <div class="checklist-col venue-gear">
+              <h4>Venue / AV Must Provide</h4>
+              <ul class="rider-checklist">
+                <li>FOH PA system (if available)</li>
+                <li>3&times; Shure SM58 or Beta 58A vocal microphones</li>
+                <li>3&times; microphone stands</li>
+                <li>2&times; music stands</li>
+                <li>1&times; keyboard stand</li>
+                <li>1&times; guitar stand</li>
+                <li>1&times; DI box</li>
+                <li>3&times; XLR cables (vocal channels)</li>
+                <li>5&times; 1/4-inch instrument cables</li>
+                <li>2&times; floor monitors</li>
+                <li>2&times; extension cords / power strips</li>
+                <li>2&times; separate power circuits</li>
+              </ul>
+            </div>
+            <div class="checklist-col band-gear">
+              <h4>Band Brings</h4>
+              <ul class="rider-checklist">
+                <li>Keyboard (Phoebe)</li>
+                <li>Guitar &amp; amplifier (Wero)</li>
+                <li>Roland SPD-SX / electronic percussion (Gerald)</li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
+        <!-- 3. What We Bring vs. What You Provide -->
+        <section class="rider-panel bring-provide-panel">
+          <h3><span>3)</span> What We Bring vs. What You Provide</h3>
+          <div class="bring-provide-grid">
+            <div class="bring-provide-card band-card">
+              <span class="bp-label">Band Brings</span>
+              <ul class="rider-checklist">
+                <li>Keyboard</li>
+                <li>Guitar &amp; amplifier</li>
+                <li>Roland SPD-SX</li>
+                <li>DI box (if preferred)</li>
+              </ul>
+            </div>
+            <div class="bring-provide-card venue-card">
+              <span class="bp-label">Venue Provides</span>
+              <ul class="rider-checklist">
+                <li>FOH PA system</li>
+                <li>3 vocal microphones (SM58 / Beta 58A)</li>
+                <li>3 microphone stands</li>
+                <li>2 music stands</li>
+                <li>1 keyboard stand</li>
+                <li>1 guitar stand</li>
+                <li>1 DI box</li>
+                <li>XLR &amp; 1/4-inch cables as listed</li>
+                <li>2 floor monitors</li>
+                <li>2 extension cords / power strips</li>
+                <li>2 separate power circuits</li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
+        <!-- 4. Band Configuration -->
+        <section class="rider-panel config-panel">
+          <h3><span>4)</span> Band Configuration</h3>
+          <div class="config-grid">
+            <div class="config-member">
+              <span class="config-icon mic-icon"></span>
+              <strong>Jazz</strong>
+              <small>Lead Vocals</small>
+            </div>
+            <div class="config-member">
+              <span class="config-icon keys-icon"></span>
+              <strong>Phoebe</strong>
+              <small>Keyboard &amp; Vocals</small>
+            </div>
+            <div class="config-member">
+              <span class="config-icon guitar-icon"></span>
+              <strong>Wero</strong>
+              <small>Guitar</small>
+            </div>
+            <div class="config-member">
+              <span class="config-icon spd-icon"></span>
+              <strong>Gerald</strong>
+              <small>SPD &amp; Vocals</small>
+            </div>
+          </div>
+        </section>
+
+        <!-- 5. Input / Patch List -->
         <section class="rider-panel patch-panel">
-          <h3><span>2)</span> Input / Patch List</h3>
-          <div class="table-wrap"><table><thead><tr><th>Ch</th><th>Source</th><th>Connection</th><th>Notes</th></tr></thead><tbody>
-            <tr><td>1</td><td>Lead Vocal</td><td>XLR</td><td>Shure SM58 or Beta 58A</td></tr>
-            <tr><td>2</td><td>SPD Output</td><td>1/4-inch</td><td>Instrument cable</td></tr>
-            <tr><td>3</td><td>SPD Vocal</td><td>XLR</td><td>Shure SM58</td></tr>
-            <tr><td>4</td><td>Keyboard</td><td>1/4-inch</td><td>Instrument cable</td></tr>
-            <tr><td>5</td><td>Keyboard Vocal</td><td>XLR</td><td>Shure SM58</td></tr>
-            <tr><td>6</td><td>Guitar</td><td>DI / 1/4-inch</td><td>DI box and 2 instrument cables</td></tr>
-          </tbody></table></div>
+          <h3><span>5)</span> Input / Patch List</h3>
+          <div class="table-wrap">
+            <table>
+              <thead>
+                <tr><th>Ch</th><th>Source</th><th>Member</th><th>Connection</th><th>Notes</th></tr>
+              </thead>
+              <tbody>
+                <tr><td>1</td><td>Lead Vocal</td><td>Jazz</td><td>XLR</td><td>Shure SM58 or Beta 58A</td></tr>
+                <tr><td>2</td><td>Guitar</td><td>Wero</td><td>DI / 1/4-inch</td><td>DI box &amp; 2 instrument cables</td></tr>
+                <tr><td>3</td><td>Keyboard</td><td>Phoebe</td><td>1/4-inch</td><td>Instrument cable</td></tr>
+                <tr><td>4</td><td>Keyboard Vocal</td><td>Phoebe</td><td>XLR</td><td>Shure SM58</td></tr>
+                <tr><td>5</td><td>SPD Output</td><td>Gerald</td><td>1/4-inch</td><td>Instrument cable</td></tr>
+                <tr><td>6</td><td>SPD Vocal</td><td>Gerald</td><td>XLR</td><td>Shure SM58</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <p class="patch-note">All vocal microphones are dynamic &mdash; no phantom power required.</p>
         </section>
-        <section class="rider-panel venue-panel">
-          <h3><span>3)</span> Venue / AV To Provide</h3>
-          <ul class="check-list">
-            <li>Front of House (FOH) PA speakers, if available</li>
-            <li>3 vocal microphones: Shure SM58 or Beta 58A</li>
-            <li>3 microphone stands</li>
-            <li>2 music stands</li>
-            <li>1 keyboard stand</li>
-            <li>1 guitar stand</li>
-            <li>1 DI box</li>
-            <li>XLR and 1/4-inch cables as listed</li>
-          </ul>
+
+        <!-- 6. Monitor Mix Preferences -->
+        <section class="rider-panel monitor-panel">
+          <h3><span>6)</span> Monitor Mix Preferences</h3>
+          <div class="monitor-grid">
+            <div class="monitor-mix">
+              <strong>Monitor 1</strong>
+              <span class="monitor-members">Jazz &amp; Phoebe</span>
+              <ul class="rider-checklist">
+                <li>Lead vocal (prominent)</li>
+                <li>Keyboard</li>
+                <li>Keyboard vocal</li>
+                <li>SPD (light)</li>
+              </ul>
+            </div>
+            <div class="monitor-mix">
+              <strong>Monitor 2</strong>
+              <span class="monitor-members">Wero &amp; Gerald</span>
+              <ul class="rider-checklist">
+                <li>Guitar</li>
+                <li>SPD / click track (prominent)</li>
+                <li>SPD vocal</li>
+                <li>Lead vocal (light)</li>
+              </ul>
+            </div>
+          </div>
         </section>
-        <section class="rider-panel monitoring-panel">
-          <h3><span>4)</span> Monitoring</h3>
-          <ul class="check-list"><li>Floor monitors x2</li></ul>
+
+        <!-- 7. Stage Plot -->
+        <section class="rider-panel stage-plot-panel">
+          <h3><span>7)</span> Stage Plot</h3>
+          <div class="stage-plot">
+            <span class="stage-label stage-back-label">BACK</span>
+            <div class="stage-area">
+              <!-- Backline row -->
+              <div class="stage-row backline">
+                <div class="stage-pos pos-guitar">
+                  <span class="pos-icon"></span>
+                  <strong>Wero</strong>
+                  <small>Guitar</small>
+                  <small class="pos-conn">DI / 1/4"</small>
+                </div>
+                <div class="stage-pos pos-spd">
+                  <span class="pos-icon"></span>
+                  <strong>Gerald</strong>
+                  <small>SPD</small>
+                  <small class="pos-conn">1/4"</small>
+                </div>
+                <div class="stage-pos pos-keys">
+                  <span class="pos-icon"></span>
+                  <strong>Phoebe</strong>
+                  <small>Keyboard</small>
+                  <small class="pos-conn">1/4"</small>
+                </div>
+              </div>
+              <!-- Power drops -->
+              <div class="stage-power-drops">
+                <div class="power-drop power-upstage">&#9889; Power Drop 1</div>
+                <div class="power-drop power-downstage">&#9889; Power Drop 2</div>
+              </div>
+              <!-- Frontline row -->
+              <div class="stage-row frontline">
+                <div class="stage-pos pos-vocal">
+                  <span class="pos-icon"></span>
+                  <strong>Jazz</strong>
+                  <small>Lead Vocal</small>
+                  <small class="pos-conn">XLR Mic</small>
+                </div>
+              </div>
+              <!-- Monitors -->
+              <div class="stage-monitors">
+                <div class="stage-monitor mon-left">Monitor 1</div>
+                <div class="stage-monitor mon-right">Monitor 2</div>
+              </div>
+            </div>
+            <span class="stage-label stage-front-label">FRONT / AUDIENCE</span>
+          </div>
         </section>
-        <section class="rider-panel stage-panel">
-          <h3><span>5)</span> Stage Plot</h3>
-          <div class="stage"><span class="stage-back">BACK</span><div class="stage-line top"></div><div class="stage-line bottom"></div><div class="stage-member guitar">Guitar<small>DI</small></div><div class="stage-member spd">SPD<small>1/4-inch</small></div><div class="stage-member keyboard">Keyboard<small>1/4-inch</small></div><div class="stage-member vocal">Lead Vocal<small>Mic</small></div><div class="monitor left">Monitor 1</div><div class="monitor right">Monitor 2</div><span class="stage-front">FRONT / AUDIENCE</span></div>
+
+        <!-- 8. Power & Stage Requirements -->
+        <section class="rider-panel power-panel">
+          <h3><span>8)</span> Power &amp; Stage Requirements</h3>
+          <div class="power-grid">
+            <div class="power-card">
+              <strong>Power</strong>
+              <ul class="rider-checklist">
+                <li>2 separate power circuits</li>
+                <li>2 extension cords / power strips</li>
+                <li>1 power drop upstage (backline: keys, guitar amp, SPD)</li>
+                <li>1 power drop downstage (monitors, front of stage)</li>
+              </ul>
+            </div>
+            <div class="power-card">
+              <strong>Stage</strong>
+              <ul class="rider-checklist">
+                <li>Sufficient space for 4 performers &amp; backline</li>
+                <li>Clear cable paths to FOH</li>
+                <li>Please contact the band in advance for any technical limitations or substitutions</li>
+              </ul>
+            </div>
+          </div>
         </section>
+
+        <!-- Footer note + print -->
+        <footer class="rider-footer">
+          <p>For any questions or substitutions, please contact the band in advance.</p>
+          <button id="print-rider" class="rider-print-btn" type="button">Print Rider</button>
+        </footer>
+
       </div>
-      <footer class="rider-note"><span>i</span>Please contact the band in advance for any technical limitations or substitutions.<button id="print-rider" type="button">Print rider</button></footer>
     </main>
+
     <script>document.getElementById('print-rider').addEventListener('click', () => window.print());</script>
   </body>
 </html>
