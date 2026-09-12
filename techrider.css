@@ -90,7 +90,7 @@
 
 .quick-grid {
   display: grid;
-  grid-template-columns: repeat(5, 1fr);
+  grid-template-columns: repeat(4, 1fr);
   gap: 12px;
 }
 
@@ -519,31 +519,6 @@
   background: rgba(255, 255, 255, 0.04);
 }
 
-/* ---- 8. Power & Stage Requirements ---- */
-.power-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 18px;
-}
-
-.power-card {
-  padding: 20px 22px;
-  border: 1px solid rgba(255, 255, 255, 0.12);
-  border-radius: 10px;
-  background: rgba(255, 255, 255, 0.03);
-}
-
-.power-card strong {
-  display: block;
-  margin-bottom: 12px;
-  color: #f5f4fb;
-  font-size: 0.95rem;
-}
-
-.power-card .rider-checklist {
-  font-size: 0.86rem;
-}
-
 /* ---- Footer ---- */
 .rider-footer {
   display: flex;
@@ -581,13 +556,7 @@
 /* ---- Responsive ---- */
 @media (max-width: 900px) {
   .quick-grid {
-    grid-template-columns: repeat(3, 1fr);
-  }
-
-  .quick-stat:last-child {
-    grid-column: span 3;
-    max-width: 200px;
-    justify-self: center;
+    grid-template-columns: repeat(2, 1fr);
   }
 
   .config-grid {
@@ -621,14 +590,9 @@
     grid-template-columns: repeat(2, 1fr);
   }
 
-  .quick-stat:last-child {
-    grid-column: span 2;
-  }
-
   .checklist-grid,
   .bring-provide-grid,
-  .monitor-grid,
-  .power-grid {
+  .monitor-grid {
     grid-template-columns: 1fr;
   }
 
@@ -709,7 +673,6 @@
 
   .quick-stat,
   .monitor-mix,
-  .power-card,
   .bring-provide-card,
   .checklist-col {
     border-color: #ccc;
@@ -722,7 +685,6 @@
   .config-member strong,
   .config-member small,
   .monitor-mix strong,
-  .power-card strong,
   .checklist-col h4,
   .patch-panel td,
   .rider-footer p,
